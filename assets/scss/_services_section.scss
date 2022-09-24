@@ -1,0 +1,219 @@
+
+
+
+.our-services{
+    padding-top: 130px;
+    padding-bottom: 130px;
+    @media #{$xs}{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @media #{$sm}{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @media #{$md}{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media #{$lg}{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+
+    .single-services{
+        border: 1px solid #EFEFEF;
+
+        padding: 44px 26px;
+        @media #{$xs}{
+			padding: 47px 19px;
+        }
+        @media #{$sm}{
+			padding: 47px 19px;
+        }
+        @media #{$md}{
+			padding: 56px 32px;
+        }
+        @media #{$lg}{
+			padding: 46px 23px;
+        }
+        
+        @include transition(.4s);
+        &:hover {
+            box-shadow: -10px 10px 76px rgba(54, 127, 255,0.12);
+        }
+        .services-ion{
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 31px;
+            line-height: 80px;
+            text-align: center;
+            box-shadow: 0px 15px 60px rgba(54, 127, 255,.1);
+
+            img{
+                
+            }
+        }
+        .services-cap{
+            h5{
+
+                a{
+                    font-size: 24px;
+                    line-height: 1.4;
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                    display: block;
+                    @media #{$sm}{
+                        font-size: 20px;
+                    }
+                    color:$heading-color !important;
+                }
+                a:hover{
+                    color: $theme-color;
+                }
+            }
+            p{
+                margin-bottom: 0px;
+            }
+            a.more-btn{
+                color: $theme-color;
+                font-size: 18px;
+                font-weight: 400;
+                &:hover{
+                    letter-spacing: 1px;
+                }
+            }
+
+        }
+        &:hover{
+            // border: 1px solid $theme-color;
+            .services-ion{
+                span{
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+}
+
+
+.top-jobs {
+    @media #{$xs}{
+        padding-top: 0px;
+        padding-bottom: 40px;
+    }
+    @media #{$sm}{
+        padding-top: 0px;
+        padding-bottom: 40px;
+    }
+    @media #{$md}{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media #{$lg}{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+
+    .single-top-jobs{
+        border: 1px solid #EFEFEF;
+        margin: 0 15px;
+        padding: 44px 26px;
+        &.single-top-jobs2{
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        @media #{$xs}{
+			padding: 47px 19px;
+        }
+        @media #{$sm}{
+			padding: 47px 19px;
+        }
+        @media #{$md}{
+			padding: 56px 32px;
+        }
+        @media #{$lg}{
+			padding: 46px 23px;
+        }
+        
+        @include transition(.4s);
+        &:hover {
+            box-shadow: -10px 10px 76px rgba(54, 127, 255,0.12);
+        }
+        .services-ion{
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 31px;
+            line-height: 80px;
+            text-align: center;
+            box-shadow: 0px 15px 60px rgba(54, 127, 255,.1);
+            img{
+                display: inherit;
+            }
+        }
+        .services-cap{
+            h5{
+
+                a{
+                    font-size: 24px;
+                    line-height: 1.4;
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                    display: block;
+                    @media #{$sm}{
+                        font-size: 20px;
+                    }
+                    color:$heading-color !important;
+                }
+                a:hover{
+                    color: $theme-color;
+                }
+            }
+            p{
+                margin-bottom: 24px;
+            }
+            a.more-btn{
+                color: $theme-color;
+                font-size: 18px;
+                font-weight: 400;
+                &:hover{
+                    letter-spacing: 1px;
+                }
+            }
+
+        }
+        &:hover{
+            // border: 1px solid $theme-color;
+            .services-ion{
+                span{
+                    color: $theme-color;
+                }
+            }
+        }
+        .stickers{
+            position: absolute;
+            right: 46px;
+            top: 30px;
+            span{
+                padding: 7px 18px;
+                background: rgba(253,143,95,0.1);
+                color: #FD8F5F;
+                border-radius: 30px;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
