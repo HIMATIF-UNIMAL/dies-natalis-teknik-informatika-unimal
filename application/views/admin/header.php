@@ -32,6 +32,7 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<?php echo base_url('theme/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
     <!-- Page CSS -->
 
