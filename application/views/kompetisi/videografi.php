@@ -19,7 +19,7 @@
                           Deadline Pendaftaran : <?= date('d F Y', strtotime( $setting['deadline'])) ?> <br>
                           Biaya registrasi : Rp. <?= number_format($setting['price']) ?> 
                         </p>
-                        <?php echo form_open_multipart('kompetisi/daftar_desain_poster');?>
+                        <?php echo form_open_multipart('kompetisi/daftar_videografi');?>
                           <div class="mb-3">
                             <label class="form-label">Email <span class="text-danger">*</span> </label>
                             <input type="email" class="form-control" name="email" required>
@@ -40,6 +40,20 @@
                             <label class="form-label">Bukti Pembayaran <span class="text-danger">*</span></label>
                             <input type="file" class="form-control" name="foto" required>
                           </div>
+
+                          <hr class="m-0 my-4">
+                          <small class="text-light fw-semibold pb-5">Anggota 1</small>
+                          <div class="mb-3">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="nama1" required>
+                          </div>
+                          <hr class="m-0 my-4">
+                          <small class="text-light fw-semibold pb-5">Anggota 2</small>
+                          <div class="mb-3">
+                            <label class="form-label">nama lengkap</label>
+                            <input type="text" class="form-control" name="nama2" required>
+                          </div>
+                          
                           <div class="text-end my-3">
                             <button class="btn btn-primary w-25 te" type="submit">Daftar</button>
                           </div>
