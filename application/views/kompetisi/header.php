@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Without menu - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Kompetisi | <?= $setting['kompetisi'] ?></title>
 
     <meta name="description" content="" />
 

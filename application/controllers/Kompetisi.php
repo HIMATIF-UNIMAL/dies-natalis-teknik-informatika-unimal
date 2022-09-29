@@ -145,9 +145,7 @@ class Kompetisi extends CI_Controller {
 
 	public function sukses()
 	{
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		// print_r($data);die;
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/header');
 		$this->load->view('kompetisi/sukses');
     $this->load->view('kompetisi/footer');
 	}

@@ -25,7 +25,7 @@
                             <input type="email" class="form-control" name="email" required>
                           </div>
                           <div class="mb-3">
-                            <label class="form-label">Nama Lengkap<span class="text-danger">*</span></label>
+                            <label class="form-label">Nama Ketua Tim<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="nama" required>
                           </div>
                           <div class="mb-3">
