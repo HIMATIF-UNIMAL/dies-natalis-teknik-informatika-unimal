@@ -103,7 +103,7 @@ class Tipografi extends CI_Controller {
 
 	public function aktif()
 	{
-		$data['title'] = 'Pending';
+		$data['title'] = 'Aktif';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 1])->row_array();
 		$data['hasil'] = $this->db->get_where('tbl_tipografi', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);

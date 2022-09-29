@@ -75,7 +75,7 @@
             </li>
 
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Kompetisi</span>
+              <span class="menu-header-text">Kompetisi Umum</span>
             </li>
 
             <!-- Layouts -->
@@ -92,17 +92,77 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                  <a href="<?= base_url('tipografi/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                  <a href="<?= base_url('tipografi/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
+                  <a href="<?= base_url('tipografi/tolak') ?>" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Desain Poster</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="<?= base_url('desain_poster') ?>" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('desain_poster/pending') ?>" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('desain_poster/aktif') ?>" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('desain_poster/tolak') ?>" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Videografi</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="<?= base_url('videografi') ?>" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('videografi/pending') ?>" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('videografi/aktif') ?>" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('videografi/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
                 </li>
@@ -182,7 +242,7 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
                 <!-- User -->
-                <span class="fw-light d-md-block d-lg-block d-none">Fajar Rivaldi Chan</span>
+                <span class="fw-light d-md-block d-lg-block d-none"><?= $this->session->userdata('nama') ?></span>
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
@@ -199,8 +259,8 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block"><?= $this->session->userdata('nama') ?></span>
+                            <small class="text-muted">Panitia</small>
                           </div>
                         </div>
                       </a>
@@ -209,7 +269,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="<?php echo base_url('auth/logout') ?>">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>

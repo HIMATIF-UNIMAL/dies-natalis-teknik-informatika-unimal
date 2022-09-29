@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Desain_poster extends CI_Controller {
+class Videografi extends CI_Controller {
 
-  function __construct(){
+	function __construct(){
 		parent::__construct();
     $this->config->load('mail');
 	}
@@ -11,7 +11,7 @@ class Desain_poster extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Setting';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/setting');
 		$this->load->view('admin/footer');
@@ -25,7 +25,7 @@ class Desain_poster extends CI_Controller {
 			'status' => $this->input->post('status'),
 			'user_log' => $this->session->userdata('nama'),
     );
-    $this->db->where('id', 2);
+    $this->db->where('id', 3);
     $this->db->update('tbl_setting' ,$data);
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -42,13 +42,23 @@ class Desain_poster extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('desain_poster')); 
+    redirect(base_url('videografi')); 
+	}
+
+	public function pending()
+	{
+		$data['title'] = 'Pending';
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 0))->result();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/videografi/pending');
+		$this->load->view('admin/footer');
 	}
 
 	public function aksi_tolak($id){
 		$this->db->set('status', 2);
 		$this->db->where('id', $id);
-    $this->db->update('tbl_poster');
+    $this->db->update('tbl_videografi');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -64,24 +74,14 @@ class Desain_poster extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('desain_poster/pending')); 
-	}
-
-	public function pending()
-	{
-		$data['title'] = 'Pending';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_poster', array('status'=> 0))->result();
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/desain_poster/pending');
-		$this->load->view('admin/footer');
+    redirect(base_url('videografi/pending')); 
 	}
 
 	public function aksi_terima($id)
 	{
     $this->db->set('status', 1);
     $this->db->where('id', $id);
-    $this->db->update('tbl_poster');
+    $this->db->update('tbl_videografi');
     $this->_sendEmail($id, 'acc');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -98,32 +98,32 @@ class Desain_poster extends CI_Controller {
       </div>
     </div>
     ');
-		redirect(base_url('desain_poster/pending')); 
+		redirect(base_url('videografi/pending')); 
 	}
 
-  public function aktif()
+	public function aktif()
 	{
 		$data['title'] = 'Aktif';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_poster', array('status'=> 1))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/tipografi/aktif');
+		$this->load->view('admin/videografi/aktif');
 		$this->load->view('admin/footer');
 	}
 
 	public function tolak()
 	{
 		$data['title'] = 'Tolak';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_poster', array('status'=> 2))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 3))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/desain_poster/tolak');
+		$this->load->view('admin/videografi/tolak');
 		$this->load->view('admin/footer');
 	}
 
 	private function _sendEmail($id, $type)
   {
-      $user = $this->db->get_where('tbl_poster', ['id' => $id])->row();
+      $user = $this->db->get_where('tbl_videografi', ['id' => $id])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');
       $addreas = $this->config->item('addreas');
