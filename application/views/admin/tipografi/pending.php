@@ -25,7 +25,7 @@
                                   <td><?php echo htmlentities($data->ig, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><a href="<?= base_url('file/'.$data->bukti) ?>"><?php echo htmlentities($data->bukti, ENT_QUOTES, 'UTF-8');?></a></td>
                                   <td>
-                                  <a href="" class="btn btn-icon btn-success">
+                                  <a href="<?= base_url('tipografi/aksi_terima/'.$data->id) ?>" class="btn btn-icon btn-success">
                                     <span class="tf-icons bx bx-check"></span>
                                   </a>
                                   <a href="<?= base_url('tipografi/aksi_tolak/'.$data->id) ?>" class="btn btn-icon btn-danger">

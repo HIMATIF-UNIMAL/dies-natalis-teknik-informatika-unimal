@@ -14,6 +14,7 @@
                                   <th>No. WA</th>
                                   <th>Username IG</th>
                                   <th>Bukti</th>
+                                  <th>Waktu Validasi</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -23,6 +24,7 @@
                                   <td><?php echo htmlentities($data->wa, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->ig, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><a href="<?= base_url('file/'.$data->bukti) ?>"><?php echo htmlentities($data->bukti, ENT_QUOTES, 'UTF-8');?></a></td>
+                                  <td><?php echo htmlentities($data->validasi, ENT_QUOTES, 'UTF-8');?></td>
                               </tr>
                             <?php } ?>
                           </tbody>
