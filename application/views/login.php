@@ -71,7 +71,7 @@
               <!-- /Logo -->
               <h4 class="mb-2">Login Panitia</h4>
               <p class="mb-4">Sistem Manajemen administrasi DN19</p>
-
+              <?= $this->session->flashdata('msg'); ?>
               <form id="formAuthentication" class="mb-3" action="<?php echo base_url('auth/login') ?>" method="POST">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>

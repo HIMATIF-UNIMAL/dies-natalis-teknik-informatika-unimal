@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Fluid - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>DN19 | <?= $title ?></title>
 
     <meta name="description" content="" />
 
@@ -67,8 +67,8 @@
 
           <ul class="menu-inner pt-3">
             <!-- Dashboard -->
-            <li class="menu-item">
-              <a href="index.html" class="menu-link">
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/dashboard')){ echo 'active';} ?>">
+              <a href="<?= base_url('page/dashboard') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -79,59 +79,59 @@
             </li>
 
             <!-- Layouts -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Tipografi</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="<?= base_url('tipografi') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi')){ echo 'active';} ?>">
+                  <a href="<?= base_url('tipografi') ?>" class="menu-link ">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="<?= base_url('tipografi/pending') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('tipografi/pending') ?>" class="menu-link ">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="<?= base_url('tipografi/aktif') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('tipografi/aktif') ?>" class="menu-link ">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="<?= base_url('tipografi/tolak') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('tipografi/tolak') ?>" class="menu-link ">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Desain Poster</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster')){ echo 'active';} ?>">
                   <a href="<?= base_url('desain_poster') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/pending')){ echo 'active';} ?>">
                   <a href="<?= base_url('desain_poster/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/aktif')){ echo 'active';} ?>">
                   <a href="<?= base_url('desain_poster/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/tolak')){ echo 'active';} ?>">
                   <a href="<?= base_url('desain_poster/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
@@ -139,29 +139,29 @@
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Videografi</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi')){ echo 'active';} ?>">
                   <a href="<?= base_url('videografi') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/pending')){ echo 'active';} ?>">
                   <a href="<?= base_url('videografi/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/aktif')){ echo 'active';} ?>">
                   <a href="<?= base_url('videografi/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/tolak')){ echo 'active';} ?>">
                   <a href="<?= base_url('videografi/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
@@ -199,13 +199,142 @@
               </ul>
             </li>
 
-            
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">PUBGM</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Free Fire</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Kompetisi Mahasiswa</span>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle ">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Cipta Puisi</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi')){ echo 'active';} ?>">
+                  <a href="<?= base_url('cipta_puisi') ?>" class="menu-link ">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('cipta_puisi/pending') ?>" class="menu-link ">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('cipta_puisi/aktif') ?>" class="menu-link ">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('cipta_puisi/tolak') ?>" class="menu-link ">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          <!-- Layouts -->
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle ">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Vocal Solo</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo')){ echo 'active';} ?>">
+                  <a href="<?= base_url('vocal_solo') ?>" class="menu-link ">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('vocal_solo/pending') ?>" class="menu-link ">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('vocal_solo/aktif') ?>" class="menu-link ">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('vocal_solo/tolak') ?>" class="menu-link ">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Lainnya</span>
+            </li>
+
             <li class="menu-item">
               <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Documentation">Admin</div>
               </a>
-              <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"  class="menu-link">
+              <a href="<?= base_url('auth/logout') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-log-out"></i>
                 <div data-i18n="Documentation">Logout</div>
               </a>
