@@ -3,7 +3,7 @@
 function sudahLogin()
 {
     $ci = get_instance();
-    if($ci->session->userdata('status') == "login"){
+    if($ci->session->userdata('status') == 1){
 			redirect(base_url('user'));
 		}
 }
@@ -11,7 +11,7 @@ function sudahLogin()
 function belumLogin()
 {
     $ci = get_instance();
-    if($ci->session->userdata('status') != "login"){
+    if($ci->session->userdata('status') != 1){
 			redirect(base_url('auth'));
 		}
 }
