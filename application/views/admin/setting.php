@@ -33,6 +33,14 @@
                         </div>
                       </div>
                       <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Link WA</label>
+                        <div class="col-sm-10">
+                          <div class="input-group input-group-merge">
+                            <input type="text" value="<?= $setting['wa'] ?>" name="wa" class="form-control" >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Status Pendaftaran</label>
                         <div class="col-sm-10">
                           <div class="input-group input-group-merge">
@@ -45,6 +53,14 @@
                               <option value="1">Buka</option>
                             <?php } ?>
                           </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Jadwal Pertandingan</label>
+                        <div class="col-sm-10">
+                          <div class="input-group input-group-merge">
+                            <input type="date" value="<?= $setting['jadwal'] ?>" name="jadwal" class="form-control" >
                           </div>
                         </div>
                       </div>

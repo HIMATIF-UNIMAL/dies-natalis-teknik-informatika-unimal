@@ -19,9 +19,11 @@ class Desain_poster extends CI_Controller {
 
 	public function simpan_setting(){
 		$data = array(
+      'jadwal' => $this->input->post('jadwal'),
       'deadline' => $this->input->post('deadline'),
       'price' => $this->input->post('price'),
       'guidebook' => $this->input->post('guidebook'),
+      'wa' => $this->input->post('wa'),
 			'status' => $this->input->post('status'),
 			'user_log' => $this->session->userdata('nama'),
     );
