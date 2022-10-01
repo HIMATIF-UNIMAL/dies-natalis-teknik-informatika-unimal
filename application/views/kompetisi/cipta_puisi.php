@@ -25,7 +25,7 @@
                   <input type="email" class="form-control" name="email" required>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Nama Lengkap<span class="text-danger">*</span></label>
+                  <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" name="nama" required>
                 </div>
                 <div class="mb-3">
@@ -39,14 +39,21 @@
                 <div class="mb-3">
                   <label class="form-label">KTM/KRS Berjalan <span class="text-danger">*</span></label>
                   <input type="file" class="form-control" name="ktm" required>
+                  <div class="form-text">
+                    ekstensi yang diizinkan png, jpg, pdf
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Bukti Pembayaran <span class="text-danger">*</span></label>
                   <input type="file" class="form-control" name="foto" required>
+                  <div class="form-text">
+                    ekstensi yang diizinkan png, jpg, pdf
+                  </div>
                 </div>
-                <div class="text-end my-3">
-                  <button class="btn btn-primary w-25 te" type="submit">Daftar</button>
+                <div class="text-md-end text-center mt-4 mb-3">
+                  <button class="btn btn-primary w-px-200 te" type="submit">Daftar</button>
                 </div>
+                <small class="text-muted">NOTE : (<span class="text-danger">*</span>) Wajib diisi</small>
                 <?php echo form_close(); ?>   
             </div>
           </div>

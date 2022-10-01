@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kompetisi extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
 	public function index()
 	{
     $this->load->view('kompetisi/header');
@@ -43,8 +28,22 @@ class Kompetisi extends CI_Controller {
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('foto')){
-					 $error = array('error' => $this->upload->display_errors());
-					 $this->load->view('seminar/seminar', $error);
+				$this->session->set_flashdata('msg',
+				'<div class="position-fixed" style="z-index: 9999999">
+				<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-header">
+						<i class="bx bx-bell me-2"></i>
+						<div class="me-auto fw-semibold">GAGAL!</div>
+						<small>Now</small>
+						<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+					</div>
+					<div class="toast-body">
+						Pastikan file yang anda input berekstensi jpg, png atau pdf 
+					</div>
+				</div>
+			</div>
+			');
+			redirect(base_url('kompetisi/tipografi'));
 	 }else{
 					 $data = array('foto' => $this->upload->data());
 					 $uploadData = $this->upload->data();
@@ -79,8 +78,22 @@ class Kompetisi extends CI_Controller {
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('foto')){
-					 $error = array('error' => $this->upload->display_errors());
-					 $this->load->view('seminar/seminar', $error);
+				$this->session->set_flashdata('msg',
+				'<div class="position-fixed" style="z-index: 9999999">
+				<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-header">
+						<i class="bx bx-bell me-2"></i>
+						<div class="me-auto fw-semibold">GAGAL!</div>
+						<small>Now</small>
+						<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+					</div>
+					<div class="toast-body">
+						Pastikan file yang anda input berekstensi jpg, png atau pdf 
+					</div>
+				</div>
+			</div>
+			');
+			redirect(base_url('kompetisi/desain_poster'));
 	 }else{
 					 $data = array('foto' => $this->upload->data());
 					 $uploadData = $this->upload->data();
@@ -120,8 +133,22 @@ class Kompetisi extends CI_Controller {
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('foto')){
-					 $error = array('error' => $this->upload->display_errors());
-					 $this->load->view('seminar/seminar', $error);
+				$this->session->set_flashdata('msg',
+				'<div class="position-fixed" style="z-index: 9999999">
+				<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-header">
+						<i class="bx bx-bell me-2"></i>
+						<div class="me-auto fw-semibold">GAGAL!</div>
+						<small>Now</small>
+						<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+					</div>
+					<div class="toast-body">
+						Pastikan file yang anda input berekstensi jpg, png atau pdf 
+					</div>
+				</div>
+			</div>
+			');
+				redirect(base_url('kompetisi/videografi'));
 	 }else{
 					 $data = array('foto' => $this->upload->data());
 					 $uploadData = $this->upload->data();
@@ -161,14 +188,42 @@ class Kompetisi extends CI_Controller {
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('ktm')) {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
 			redirect(base_url('kompetisi/vocal_solo'));
 		} else {
 			$fileData = $this->upload->data();
 			 $hasil['ktm'] = $fileData['file_name'];
 		}
 		if (!$this->upload->do_upload('foto')) {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
 			redirect(base_url('kompetisi/vocal_solo'));
 		} else {
 			$fileData = $this->upload->data();
@@ -206,14 +261,42 @@ class Kompetisi extends CI_Controller {
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('ktm')) {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
 			redirect(base_url('kompetisi/cipta_puisi'));
 		} else {
 			$fileData = $this->upload->data();
 			 $hasil['ktm'] = $fileData['file_name'];
 		}
 		if (!$this->upload->do_upload('foto')) {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
 			redirect(base_url('kompetisi/cipta_puisi'));
 		} else {
 			$fileData = $this->upload->data();
