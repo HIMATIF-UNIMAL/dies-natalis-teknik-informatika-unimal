@@ -329,11 +329,13 @@
               <span class="menu-header-text">Lainnya</span>
             </li>
 
-            <li class="menu-item">
-              <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"  class="menu-link">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/panitia')){ echo 'active';} ?>">
+              <a href="<?= base_url('page/panitia') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Documentation">Admin</div>
+                <div data-i18n="Documentation">Panitia</div>
               </a>
+            </li>
+            <li class="menu-item">  
               <a href="<?= base_url('auth/logout') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-log-out"></i>
                 <div data-i18n="Documentation">Logout</div>
