@@ -15,7 +15,10 @@ class Kompetisi extends CI_Controller {
   public function tipografi()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 1])->row_array();
-		// print_r($data);die;
+		//print_r($data['setting']['status']);die;
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
     $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/tipografi');
     $this->load->view('kompetisi/include/footer');
@@ -68,8 +71,10 @@ class Kompetisi extends CI_Controller {
 	public function desain_poster()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
-		// print_r($data);die;
-    $this->load->view('kompetisi/include/header', $data);
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
+		$this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/desain_poster');
     $this->load->view('kompetisi/include/footer');
 	}
@@ -120,7 +125,9 @@ class Kompetisi extends CI_Controller {
 	public function videografi()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		// print_r($data);die;
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
     $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/videografi');
     $this->load->view('kompetisi/include/footer');
@@ -176,6 +183,9 @@ class Kompetisi extends CI_Controller {
 	public function vocal_solo()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 4])->row_array();
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
     $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/vocal_solo');
     $this->load->view('kompetisi/include/footer');
@@ -249,6 +259,9 @@ class Kompetisi extends CI_Controller {
 	public function cipta_puisi()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
     $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/cipta_puisi');
     $this->load->view('kompetisi/include/footer');
@@ -323,6 +336,13 @@ class Kompetisi extends CI_Controller {
 	{
     $this->load->view('kompetisi/include/header');
 		$this->load->view('kompetisi/sukses');
+    $this->load->view('kompetisi/include/footer');
+	}
+
+	public function tutup()
+	{
+    $this->load->view('kompetisi/include/header');
+		$this->load->view('kompetisi/tutup');
     $this->load->view('kompetisi/include/footer');
 	}
 }

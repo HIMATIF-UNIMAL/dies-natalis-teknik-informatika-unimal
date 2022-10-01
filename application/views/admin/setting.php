@@ -7,7 +7,7 @@
                     <h5 class="mb-0"><?= $setting['kompetisi'] ?></h5>
                   </div>
                   <div class="card-body">
-                    <form method="POST" action="<?= base_url(str_replace(" ","_", $setting['kompetisi']).'/simpan_setting') ?>">
+                    <form method="POST" action="<?= base_url(str_replace(" ","_", strtolower($setting['kompetisi'])).'/simpan_setting') ?>">
                       <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Deadline</label>
                         <div class="col-sm-10">

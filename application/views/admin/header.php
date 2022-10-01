@@ -264,15 +264,15 @@
             </li>
 
             <!-- Layouts -->
-            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/aktif')){ echo 'active open';} ?>">
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Cipta Puisi</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi')){ echo 'active';} ?>">
-                  <a href="<?= base_url('cipta_puisi') ?>" class="menu-link ">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('cipta_puisi/setting') ?>" class="menu-link ">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
@@ -295,15 +295,15 @@
             </li>
 
           <!-- Layouts -->
-            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/aktif')){ echo 'active open';} ?>">
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Vocal Solo</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo')){ echo 'active';} ?>">
-                  <a href="<?= base_url('vocal_solo') ?>" class="menu-link ">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/vocal_solo/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('vocal_solo/setting') ?>" class="menu-link ">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>

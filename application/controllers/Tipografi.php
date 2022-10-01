@@ -45,7 +45,7 @@ class Tipografi extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('tipografi')); 
+    redirect(base_url('tipografi/setting')); 
 	}
 
 	public function pending()

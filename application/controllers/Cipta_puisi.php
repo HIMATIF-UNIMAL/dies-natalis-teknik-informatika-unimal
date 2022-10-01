@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Videografi extends CI_Controller {
+class Cipta_puisi extends CI_Controller {
 
-	function __construct(){
+  function __construct(){
 		parent::__construct();
     $this->config->load('mail');
     belumLogin();
@@ -12,7 +12,7 @@ class Videografi extends CI_Controller {
 	public function setting()
 	{
 		$data['title'] = 'Setting';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/setting');
 		$this->load->view('admin/footer');
@@ -28,7 +28,7 @@ class Videografi extends CI_Controller {
 			'status' => $this->input->post('status'),
 			'user_log' => $this->session->userdata('nama'),
     );
-    $this->db->where('id', 3);
+    $this->db->where('id', 5);
     $this->db->update('tbl_setting' ,$data);
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -45,23 +45,13 @@ class Videografi extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('videografi/setting')); 
-	}
-
-	public function pending()
-	{
-		$data['title'] = 'Pending';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 0))->result();
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/videografi/pending');
-		$this->load->view('admin/footer');
+    redirect(base_url('cipta_puisi/setting')); 
 	}
 
 	public function aksi_tolak($id){
 		$this->db->set('status', 2);
 		$this->db->where('id', $id);
-    $this->db->update('tbl_videografi');
+    $this->db->update('tbl_cipta_puisi');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -77,14 +67,24 @@ class Videografi extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('videografi/pending')); 
+    redirect(base_url('cipta_puisi/pending')); 
+	}
+
+	public function pending()
+	{
+		$data['title'] = 'Pending';
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 4])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 0))->result();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/cipta_puisi/pending');
+		$this->load->view('admin/footer');
 	}
 
 	public function aksi_terima($id)
 	{
     $this->db->set('status', 1);
     $this->db->where('id', $id);
-    $this->db->update('tbl_videografi');
+    $this->db->update('tbl_cipta_puisi');
     $this->_sendEmail($id, 'acc');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -101,33 +101,33 @@ class Videografi extends CI_Controller {
       </div>
     </div>
     ');
-		redirect(base_url('videografi/pending')); 
+		redirect(base_url('cipta_puisi/pending')); 
 	}
 
-	public function aktif()
+  public function aktif()
 	{
 		$data['title'] = 'Aktif';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 1))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/videografi/aktif');
+		$this->load->view('admin/cipta_puisi/aktif');
 		$this->load->view('admin/footer');
 	}
 
 	public function tolak()
 	{
 		$data['title'] = 'Tolak';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 3))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/videografi/tolak');
+		$this->load->view('admin/cipta_puisi/tolak');
 		$this->load->view('admin/footer');
 	}
 
 	private function _sendEmail($id, $type)
   {
-      $user = $this->db->get_where('tbl_videografi', ['id' => $id])->row();
-      $setting = $this->db->get_where('tbl_setting', ['id' => 3])->row();
+      $user = $this->db->get_where('tbl_cipta_puisi', ['id' => $id])->row();
+      $setting = $this->db->get_where('tbl_setting', ['id' => 5])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');
       $addreas = $this->config->item('addreas');

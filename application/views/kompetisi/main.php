@@ -62,7 +62,7 @@
                       </p>
                       <div class="btn-group w-100" role="group" aria-label="Basic example">
                         <a href="<?php echo htmlentities($data->guidebook, ENT_QUOTES, 'UTF-8');?>" class="btn btn-outline-primary"><i class="bx bxs-download fs-4 lh-0"></i> Guidebook</a>
-                        <a href="" class="btn btn-primary"> <i class="bx bxs-user-plus fs-4 lh-0"></i> Registrasi</a>
+                        <a href="<?= base_url(str_replace(" ","_", strtolower($data->kompetisi))) ?>" class="btn btn-primary"> <i class="bx bxs-user-plus fs-4 lh-0"></i> Registrasi</a>
                       </div>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
                       </p>
                       <div class="btn-group w-100" role="group" aria-label="Basic example">
                         <a href="<?php echo htmlentities($data->guidebook, ENT_QUOTES, 'UTF-8');?>" class="btn btn-outline-primary"><i class="bx bxs-download fs-4 lh-0"></i> Guidebook</a>
-                        <a href="" class="btn btn-primary"> <i class="bx bxs-user-plus fs-4 lh-0"></i> Registrasi</a>
+                        <a href="<?= base_url(str_replace(" ","_", strtolower($data->kompetisi))) ?>" class="btn btn-primary"> <i class="bx bxs-user-plus fs-4 lh-0"></i> Registrasi</a>
                       </div>
                     </div>
                   </div>

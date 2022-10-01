@@ -59,10 +59,10 @@
           <!-- Navbar -->
 
           <div class="container">
-            <div class="row">
-              <div class="col-12 text-center pt-5 pb-5">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 text-center pt-5 pb-5">
               <span class="pt-5">
-                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="60" alt="">
+                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" class="img-fluid" alt="">
               </span>
               </div>
             </div>

@@ -45,7 +45,7 @@ class Desain_poster extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('desain_poster')); 
+    redirect(base_url('desain_poster/setting')); 
 	}
 
 	public function aksi_tolak($id){
