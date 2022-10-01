@@ -127,6 +127,7 @@ class Tipografi extends CI_Controller {
 	private function _sendEmail($id, $type)
   {
       $user = $this->db->get_where('tbl_tipografi', ['id' => $id])->row();
+			$setting = $this->db->get_where('tbl_setting', ['id' => 1])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');
       $addreas = $this->config->item('addreas');
@@ -181,7 +182,9 @@ class Tipografi extends CI_Controller {
                                 </tr>
                                 <tr style="border-collapse:collapse">
                                   <td align="left" style="padding:0;Margin:0;padding-bottom:10px;padding-top:15px"><p style="Margin:0;font-size:16px;line-height:24px;color:#333333">
-                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/tipografi/'. $user->slug .'">'.base_url().'tiket/'. $user->slug .'</a></p> 
+                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/tipografi/'. $user->slug .'">'.base_url().'tiket/'. $user->slug .'</a>
+																		<br><br>untuk Info lebih lanjut, silahkan gabung ke grub whatsapp berikut : <br> <a href="'. $setting->wa .'">'. $setting->wa .'</a>
+																		</p> 
                                   </td>
                                 </tr>
                               </tbody></table></td>

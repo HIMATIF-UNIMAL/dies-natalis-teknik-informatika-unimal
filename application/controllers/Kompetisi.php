@@ -143,6 +143,97 @@ class Kompetisi extends CI_Controller {
 		 }                 
 	}
 
+
+	public function vocal_solo()
+	{
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 4])->row_array();
+    $this->load->view('kompetisi/header', $data);
+		$this->load->view('kompetisi/vocal_solo');
+    $this->load->view('kompetisi/footer');
+	}
+	public function daftar_vocal_solo()
+	{
+		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 32);
+
+		$config['upload_path']          = './file';
+		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
+		$config['encrypt_name']        = true;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('ktm')) {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			redirect(base_url('kompetisi/vocal_solo'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['ktm'] = $fileData['file_name'];
+		}
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			redirect(base_url('kompetisi/vocal_solo'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto'] = $fileData['file_name'];
+		}
+					 $data = array(
+						'slug' => $slug,
+						'email' => $this->input->post('email'),
+						'nama' => $this->input->post('nama'),
+						'wa' => $this->input->post('wa'),
+						'jurusan' => $this->input->post('jurusan'),
+						'bukti' => $hasil['foto'],
+						'ktm' => $hasil['ktm'],
+						'status' => 0,
+				 );
+				 $this->db->insert('tbl_vocal_solo',$data);
+				 redirect(base_url('kompetisi/sukses'));
+		               
+	}
+
+	public function cipta_puisi()
+	{
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
+    $this->load->view('kompetisi/header', $data);
+		$this->load->view('kompetisi/cipta_puisi');
+    $this->load->view('kompetisi/footer');
+	}
+	public function daftar_cipta_puisi()
+	{
+		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 32);
+
+		$config['upload_path']          = './file';
+		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
+		$config['encrypt_name']        = true;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('ktm')) {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			redirect(base_url('kompetisi/cipta_puisi'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['ktm'] = $fileData['file_name'];
+		}
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png.</div>');
+			redirect(base_url('kompetisi/cipta_puisi'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto'] = $fileData['file_name'];
+		}
+					 $data = array(
+						'slug' => $slug,
+						'email' => $this->input->post('email'),
+						'nama' => $this->input->post('nama'),
+						'wa' => $this->input->post('wa'),
+						'jurusan' => $this->input->post('jurusan'),
+						'bukti' => $hasil['foto'],
+						'ktm' => $hasil['ktm'],
+						'status' => 0,
+				 );
+				 $this->db->insert('tbl_cipta_puisi',$data);
+				 redirect(base_url('kompetisi/sukses'));
+		               
+	}
+
 	public function sukses()
 	{
     $this->load->view('kompetisi/header');
