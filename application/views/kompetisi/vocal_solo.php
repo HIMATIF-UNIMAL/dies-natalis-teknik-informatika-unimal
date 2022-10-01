@@ -13,7 +13,7 @@
                           <h5 class="card-title pt-2"><?= $setting['kompetisi'] ?></h5>
                         </div>
                         <div class="col-6 text-end">
-                          <a href=" <?= $setting['guidebook'] ?>" target="_blank" class="btn btn-primary btn-sm"><i class="bx bxs-download fs-4 lh-0"></i> Guide Book</a>
+                          <a href=" <?= $setting['guidebook'] ?>" target="_blank" class="btn btn-outline-secondary btn-sm"><i class="bx bxs-download fs-4 lh-0"></i> Guide Book</a>
                         </div>
                         <p class="card-text">
                           Deadline Pendaftaran : <?= date('d F Y', strtotime( $setting['deadline'])) ?> <br>
@@ -51,7 +51,7 @@
                             </div>
                           </div>
                           <div class="text-md-end text-center mt-4 mb-3">
-                            <button class="btn btn-primary w-px-200 te" type="submit">Daftar</button>
+                            <button class="btn btn-secondary w-px-200 te" type="submit">Daftar</button>
                           </div>
                           <small class="text-muted">NOTE : (<span class="text-danger">*</span>) Wajib diisi</small>
                           <?php echo form_close(); ?>   

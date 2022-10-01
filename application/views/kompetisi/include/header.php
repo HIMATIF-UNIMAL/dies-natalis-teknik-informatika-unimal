@@ -65,7 +65,7 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
               <div class="navbar-nav align-items-center">
-                <a href="<?= base_url() ?>" class="nav-item d-flex align-items-center">
+                <a href="<?= base_url() ?>" class="nav-item d-flex align-items-center text-secondary">
                   <i class="bx bx-arrow-back fs-4 lh-0 me-3"></i>
                   Back To Home
                 </a>
