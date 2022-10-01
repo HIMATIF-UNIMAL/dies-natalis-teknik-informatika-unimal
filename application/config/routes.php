@@ -51,5 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'kompetisi';
 $route['panitia'] = 'auth';
+$route['desain_poster'] = 'kompetisi/desain_poster';
+$route['tipografi'] = 'kompetisi/tipografi';
+$route['videografi'] = 'kompetisi/videografi';
+$route['vocal_solo'] = 'kompetisi/vocal_solo';
+$route['cipta_puisi'] = 'kompetisi/cipta_puisi';
+$route['mobile_legend'] = 'kompetisi/mobile_legend';
+$route['pubgm'] = 'kompetisi/pubgm';
+$route['free_fire'] = 'kompetisi/free_fire';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

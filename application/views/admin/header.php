@@ -79,15 +79,15 @@
             </li>
 
             <!-- Layouts -->
-            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/aktif')){ echo 'active open';} ?>">
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Tipografi</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi')){ echo 'active';} ?>">
-                  <a href="<?= base_url('tipografi') ?>" class="menu-link ">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/tipografi/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('tipografi/setting') ?>" class="menu-link ">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
@@ -109,15 +109,15 @@
               </ul>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/aktif')){ echo 'active open';} ?>">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Desain Poster</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster')){ echo 'active';} ?>">
-                  <a href="<?= base_url('desain_poster') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/desain_poster/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('desain_poster/setting') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
@@ -139,15 +139,15 @@
               </ul>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/aktif')){ echo 'active open';} ?>">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Videografi</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi')){ echo 'active';} ?>">
-                  <a href="<?= base_url('videografi') ?>" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/videografi/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('videografi/setting') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>

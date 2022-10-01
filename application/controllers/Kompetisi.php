@@ -5,18 +5,20 @@ class Kompetisi extends CI_Controller {
 
 	public function index()
 	{
-    $this->load->view('kompetisi/header');
-		$this->load->view('welcome_message');
-    $this->load->view('kompetisi/footer');
+		$data['umum'] = $this->db->get_where('tbl_setting', ['jenis' => 'umum'])->result();
+		$data['mahasiswa'] = $this->db->get_where('tbl_setting', ['jenis' => 'mahasiswa'])->result();
+    $this->load->view('kompetisi/include/header_page', $data);
+		$this->load->view('Kompetisi/main');
+    $this->load->view('kompetisi/include/footer');
 	}
 
   public function tipografi()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 1])->row_array();
 		// print_r($data);die;
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/tipografi');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 	public function daftar_tipografi()
 	{
@@ -67,9 +69,9 @@ class Kompetisi extends CI_Controller {
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
 		// print_r($data);die;
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/desain_poster');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 	public function daftar_desain_poster()
 	{
@@ -119,9 +121,9 @@ class Kompetisi extends CI_Controller {
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
 		// print_r($data);die;
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/videografi');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 	public function daftar_videografi()
 	{
@@ -174,9 +176,9 @@ class Kompetisi extends CI_Controller {
 	public function vocal_solo()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 4])->row_array();
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/vocal_solo');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 	public function daftar_vocal_solo()
 	{
@@ -247,9 +249,9 @@ class Kompetisi extends CI_Controller {
 	public function cipta_puisi()
 	{
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
-    $this->load->view('kompetisi/header', $data);
+    $this->load->view('kompetisi/include/header', $data);
 		$this->load->view('kompetisi/cipta_puisi');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 	public function daftar_cipta_puisi()
 	{
@@ -319,8 +321,8 @@ class Kompetisi extends CI_Controller {
 
 	public function sukses()
 	{
-    $this->load->view('kompetisi/header');
+    $this->load->view('kompetisi/include/header');
 		$this->load->view('kompetisi/sukses');
-    $this->load->view('kompetisi/footer');
+    $this->load->view('kompetisi/include/footer');
 	}
 }

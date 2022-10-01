@@ -58,23 +58,14 @@
         <div class="layout-page">
           <!-- Navbar -->
 
-          <nav
-            class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar fixed-top"
-          >
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-arrow-back fs-4 lh-0 me-3"></i>
-                  Back To Kompetition
-                </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center pt-5 pb-5">
+              <span class="pt-5">
+                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="60" alt="">
+              </span>
               </div>
-              <!-- /Search -->
-
-
-              </ul>
             </div>
-          </nav>
+          </div>
 
           <!-- / Navbar -->
