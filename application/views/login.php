@@ -64,7 +64,7 @@
               <div class="app-brand justify-content-center">
                 <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="30" alt="">
+                    <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="100" alt="">
                   </span>
                 </a>
               </div>
@@ -136,8 +136,10 @@
     <script src="<?php echo base_url('theme/') ?>assets/js/main.js"></script>
 
     <!-- Page JS -->
-
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+       setTimeout(function () {
+          $("#toast").removeClass("show");
+        }, 3000);
+    </script>
   </body>
 </html>

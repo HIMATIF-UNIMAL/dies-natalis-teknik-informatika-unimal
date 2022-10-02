@@ -54,7 +54,7 @@
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo">
-                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="30" alt="">
+                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" height="60" alt="">
               </span>
             </a>
 
@@ -327,6 +327,17 @@
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Lainnya</span>
+            </li>
+
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/bootcamp')){ echo 'active';} ?>">
+              <a href="<?= base_url('page/bootcamp') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-certification"></i>
+                <div data-i18n="Documentation">Bootcamp</div>
+              </a>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">User</span>
             </li>
 
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/panitia')){ echo 'active';} ?>">

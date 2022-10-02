@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Page extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		belumLogin();
+	}
+
 	public function index()
 	{
     redirect(base_url('page/dashboard')); 

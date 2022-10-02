@@ -47,7 +47,11 @@
 
     <!-- Main JS -->
     <script src="<?php echo base_url('theme/') ?>assets/js/main.js"></script>
-
+    <script>
+       setTimeout(function () {
+          $("#toast").removeClass("show");
+        }, 3000);
+    </script>
     <!-- Page JS -->
   </body>
 </html>

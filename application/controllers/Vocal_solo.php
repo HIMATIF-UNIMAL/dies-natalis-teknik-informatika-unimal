@@ -182,7 +182,7 @@ class Vocal_solo extends CI_Controller {
                                 </tr>
                                 <tr style="border-collapse:collapse">
                                   <td align="left" style="padding:0;Margin:0;padding-bottom:10px;padding-top:15px"><p style="Margin:0;font-size:16px;line-height:24px;color:#333333">
-                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/tipografi/'. $user->slug .'">'.base_url().'tiket/'. $user->slug .'</a>
+                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/vocal_solo/'. $user->slug .'">'.base_url().'tiket/vocal_solo/'. $user->slug .'</a>
                                     <br><br>untuk Info lebih lanjut, silahkan gabung ke grub whatsapp berikut : <br> <a href="'. $setting->wa .'">'. $setting->wa .'</a>
                                     </p> 
                                   </td>
