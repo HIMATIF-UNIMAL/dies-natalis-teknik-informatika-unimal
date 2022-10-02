@@ -48,13 +48,13 @@
                           <small class="text-light fw-semibold pb-5">Anggota 1</small>
                           <div class="mb-3">
                             <label class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="nama1" required>
+                            <input type="text" class="form-control" name="nama1">
                           </div>
                           <hr class="m-0 my-4">
                           <small class="text-light fw-semibold pb-5">Anggota 2</small>
                           <div class="mb-3">
                             <label class="form-label">nama lengkap</label>
-                            <input type="text" class="form-control" name="nama2" required>
+                            <input type="text" class="form-control" name="nama2">
                           </div>
                           
                           <div class="text-md-end text-center mt-4 mb-3">

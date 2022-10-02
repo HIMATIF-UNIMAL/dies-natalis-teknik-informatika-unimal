@@ -10,6 +10,7 @@
                     <div class="card-body text-center">
                       <h5 class="card-title pt-5">Terima Kasih Telah Mendaftar</h5>
                       <p>data anda sedang kami proses <br><span class="text-success">E-ticket anda akan kami kirim via email</span></p>
+                      <span>NOTE : Silahkan cek email secara berkala</span>
                       </div>
                     </div>
                   </div>

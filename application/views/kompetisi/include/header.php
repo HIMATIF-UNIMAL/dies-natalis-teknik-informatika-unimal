@@ -16,8 +16,12 @@
 
     <title>Kompetisi | <?= $setting['kompetisi'] ?></title>
 
-    <meta name="description" content="" />
-
+    <meta name="description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh">
+    <meta property="og:url" content="<?= base_url() ?>" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Kompetisi | <?= $setting['kompetisi'] ?>" />
+    <meta property="og:image" content="<?= base_url('/theme/assets/img/elements/dn19.png') ?>" />
+    <meta property="og:description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('theme/') ?>assets/img/favicon/favicon.ico" />
 

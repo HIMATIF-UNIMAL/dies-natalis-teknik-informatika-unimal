@@ -9,14 +9,19 @@
 >
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="https://tif-unimal20.web.id/frontend/assets/images/logo-it.png" type="image/gif" sizes="16x16">
+    <meta name="description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh">
+    <meta property="og:url" content="<?= base_url() ?>" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dies Natalis 19 Teknik Informatika UNIMAL" />
+    <meta property="og:image" content="<?= base_url('/theme/assets/img/elements/dn19.png') ?>" />
+    <meta property="og:description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
     <title>Dies Natalis 19 Teknik Informatika UNIMAL</title>
-
-    <meta name="description" content="" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('theme/') ?>assets/img/favicon/favicon.ico" />
