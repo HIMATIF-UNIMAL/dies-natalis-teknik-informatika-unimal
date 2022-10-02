@@ -52,7 +52,7 @@ class Pubgm extends CI_Controller {
 	{
 		$data['title'] = 'Pending';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 7])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_pubg', array('status'=> 0))->result();
+		$data['hasil'] = $this->db->get_where('tbl_pubgm', array('status'=> 0))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/pubgm/pending');
 		$this->load->view('admin/footer');
@@ -61,7 +61,7 @@ class Pubgm extends CI_Controller {
 	public function aksi_tolak($id){
 		$this->db->set('status', 2);
 		$this->db->where('id', $id);
-    $this->db->update('tbl_pubg');
+    $this->db->update('tbl_pubgm');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -84,7 +84,7 @@ class Pubgm extends CI_Controller {
 	{
     $this->db->set('status', 1);
     $this->db->where('id', $id);
-    $this->db->update('tbl_pubg');
+    $this->db->update('tbl_pubgm');
     $this->_sendEmail($id, 'acc');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -108,7 +108,7 @@ class Pubgm extends CI_Controller {
 	{
 		$data['title'] = 'Aktif';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 7])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_pubg', array('status'=> 1))->result();
+		$data['hasil'] = $this->db->get_where('tbl_pubgm', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/pubgm/aktif');
 		$this->load->view('admin/footer');
@@ -118,7 +118,7 @@ class Pubgm extends CI_Controller {
 	{
 		$data['title'] = 'Tolak';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 7])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_pubg', array('status'=> 3))->result();
+		$data['hasil'] = $this->db->get_where('tbl_pubgm', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/pubgm/tolak');
 		$this->load->view('admin/footer');
@@ -126,7 +126,7 @@ class Pubgm extends CI_Controller {
 
 	private function _sendEmail($id, $type)
   {
-      $user = $this->db->get_where('tbl_pubg', ['id' => $id])->row();
+      $user = $this->db->get_where('tbl_pubgm', ['id' => $id])->row();
       $setting = $this->db->get_where('tbl_setting', ['id' => 7])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');

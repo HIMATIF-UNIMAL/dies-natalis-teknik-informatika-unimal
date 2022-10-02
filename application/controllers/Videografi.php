@@ -118,7 +118,7 @@ class Videografi extends CI_Controller {
 	{
 		$data['title'] = 'Tolak';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 3])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 3))->result();
+		$data['hasil'] = $this->db->get_where('tbl_videografi', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/videografi/tolak');
 		$this->load->view('admin/footer');

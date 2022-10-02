@@ -169,90 +169,90 @@
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Mobile Legend</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/setting') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">PUBGM</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('pubgm/setting') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('pubgm/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('pubgm/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pubgm/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('pubgm/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Layouts">Free Fire</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('free_fire/setting') ?>" class="menu-link">
                     <div data-i18n="Without menu">Setting</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('free_fire/pending') ?>" class="menu-link">
                     <div data-i18n="Without navbar">Pending</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('free_fire/aktif') ?>" class="menu-link">
                     <div data-i18n="Container">Aktif</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/free_fire/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('free_fire/tolak') ?>" class="menu-link">
                     <div data-i18n="Fluid">Tolak</div>
                   </a>
                 </li>
@@ -329,11 +329,35 @@
               <span class="menu-header-text">Lainnya</span>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/bootcamp')){ echo 'active';} ?>">
-              <a href="<?= base_url('page/bootcamp') ?>"  class="menu-link">
+            <!-- Layouts -->
+            <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-certification"></i>
-                <div data-i18n="Documentation">Bootcamp</div>
+                <div data-i18n="Layouts">Bootcamp</div>
               </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('bootcamp/setting') ?>" class="menu-link ">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('bootcamp/pending') ?>" class="menu-link ">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('bootcamp/aktif') ?>" class="menu-link ">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/bootcamp/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('bootcamp/tolak') ?>" class="menu-link ">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="menu-header small text-uppercase">

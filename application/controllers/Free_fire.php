@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class free_fire extends CI_Controller {
+class Free_fire extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -118,7 +118,7 @@ class free_fire extends CI_Controller {
 	{
 		$data['title'] = 'Tolak';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 8])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_ff', array('status'=> 3))->result();
+		$data['hasil'] = $this->db->get_where('tbl_ff', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/free_fire/tolak');
 		$this->load->view('admin/footer');

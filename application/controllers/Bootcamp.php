@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mobile_legend extends CI_Controller {
+class Bootcamp extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -12,7 +12,7 @@ class Mobile_legend extends CI_Controller {
 	public function setting()
 	{
 		$data['title'] = 'Setting';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 6])->row_array();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 9])->row_array();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/setting');
 		$this->load->view('admin/footer');
@@ -45,23 +45,23 @@ class Mobile_legend extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('mobile_legend/setting')); 
+    redirect(base_url('bootcamp/setting')); 
 	}
 
 	public function pending()
 	{
 		$data['title'] = 'Pending';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 6])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_ml', array('status'=> 0))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 9])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_bootcamp', array('status'=> 0))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/mobile_legend/pending');
+		$this->load->view('admin/bootcamp/pending');
 		$this->load->view('admin/footer');
 	}
 
 	public function aksi_tolak($id){
 		$this->db->set('status', 2);
 		$this->db->where('id', $id);
-    $this->db->update('tbl_ml');
+    $this->db->update('tbl_bootcamp');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -77,14 +77,14 @@ class Mobile_legend extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('mobile_legend/pending')); 
+    redirect(base_url('bootcamp/pending')); 
 	}
 
 	public function aksi_terima($id)
 	{
     $this->db->set('status', 1);
     $this->db->where('id', $id);
-    $this->db->update('tbl_ml');
+    $this->db->update('tbl_bootcamp');
     $this->_sendEmail($id, 'acc');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -101,33 +101,33 @@ class Mobile_legend extends CI_Controller {
       </div>
     </div>
     ');
-		redirect(base_url('mobile_legend/pending')); 
+		redirect(base_url('bootcamp/pending')); 
 	}
 
 	public function aktif()
 	{
 		$data['title'] = 'Aktif';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 6])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_ml', array('status'=> 1))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 9])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_bootcamp', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/mobile_legend/aktif');
+		$this->load->view('admin/bootcamp/aktif');
 		$this->load->view('admin/footer');
 	}
 
 	public function tolak()
 	{
 		$data['title'] = 'Tolak';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 6])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_ml', array('status'=> 2))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 9])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_bootcamp', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/mobile_legend/tolak');
+		$this->load->view('admin/bootcamp/tolak');
 		$this->load->view('admin/footer');
 	}
 
 	private function _sendEmail($id, $type)
   {
-      $user = $this->db->get_where('tbl_ml', ['id' => $id])->row();
-      $setting = $this->db->get_where('tbl_setting', ['id' => 6])->row();
+      $user = $this->db->get_where('tbl_bootcamp', ['id' => $id])->row();
+      $setting = $this->db->get_where('tbl_setting', ['id' => 9])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');
       $addreas = $this->config->item('addreas');
@@ -182,7 +182,7 @@ class Mobile_legend extends CI_Controller {
                                 </tr>
                                 <tr style="border-collapse:collapse">
                                   <td align="left" style="padding:0;Margin:0;padding-bottom:10px;padding-top:15px"><p style="Margin:0;font-size:16px;line-height:24px;color:#333333">
-                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/mobile_legend/'. $user->slug .'">'.base_url().'tiket/mobile_legend/'. $user->slug .'</a>
+                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/bootcamp/'. $user->slug .'">'.base_url().'tiket/bootcamp/'. $user->slug .'</a>
                                     <br><br>untuk Info lebih lanjut, silahkan gabung ke grub whatsapp berikut : <br> <a href="'. $setting->wa .'">'. $setting->wa .'</a>
                                     </p> 
                                   </td>
