@@ -110,7 +110,7 @@ class Desain_poster extends CI_Controller {
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
 		$data['hasil'] = $this->db->get_where('tbl_poster', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/tipografi/aktif');
+		$this->load->view('admin/desain_poster/aktif');
 		$this->load->view('admin/footer');
 	}
 

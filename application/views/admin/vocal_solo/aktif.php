@@ -9,7 +9,7 @@
                       <h5><?= $setting['kompetisi'] ?></h5>
                       </div>
                       <div>
-                        <a href="<?= base_url('cipta_puisi/pdf') ?>" class="btn btn-danger btn-sm"><i class='bx bxs-file-pdf'></i> Absensi</a>
+                        <a href="<?= base_url('vocal_solo/pdf') ?>" class="btn btn-danger btn-sm"><i class='bx bxs-file-pdf'></i> Absensi</a>
                       </div>
                     </div>                    
                     <div class="card-body">

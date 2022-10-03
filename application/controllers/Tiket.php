@@ -25,8 +25,8 @@ class Tiket extends CI_Controller {
 
   public function desain_poster($slug)
 	{
-    $data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
     $data['slug'] = $this->db->get_where('tbl_poster', ['slug' => $slug])->row_array();
+    $data['setting'] = $this->db->get_where('tbl_setting', ['id' => 2])->row_array();
     if( $slug == null){
       redirect(base_url());
     }elseif($slug != $data['slug']['slug']){
