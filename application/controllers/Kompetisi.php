@@ -9,7 +9,7 @@ class Kompetisi extends CI_Controller {
 		$data['mahasiswa'] = $this->db->get_where('tbl_setting', ['jenis' => 'mahasiswa'])->result();
 		$data['lainnya'] = $this->db->get_where('tbl_setting', ['jenis' => 'lainnya'])->result();
     $this->load->view('kompetisi/include/header_page', $data);
-		$this->load->view('Kompetisi/main');
+		$this->load->view('kompetisi/main');
     $this->load->view('kompetisi/include/footer');
 	}
 

@@ -14,7 +14,29 @@ class Page extends CI_Controller {
 
   public function dashboard()
 	{
+    date_default_timezone_set("Asia/Jakarta");
+    $jam = date('H:i');
+    //atur salam menggunakan IF
+    if ($jam > '05:30' && $jam < '10:00') {
+        $salam = 'Good Morning,';
+    } elseif ($jam >= '10:00' && $jam < '15:00') {
+        $salam = 'Good Day,';
+    } elseif ($jam >= '15:00' && $jam <= '19:00') {
+        $salam = 'Good Afternoon,';
+    } else {
+        $salam = 'Good Night,';
+    } 
+    $data['salam'] = $salam.' Have a nice day';
     $data['title'] = 'Dashboard';
+    $data['log'] = $this->db->order_by('date', 'DESC')->get_where('log', array('ket'=>'sukses'), 5)->result();
+    $data['tipografi'] = $this->db->get_where('tbl_tipografi', array('status'=>0))->num_rows();
+    $data['desain_poster'] = $this->db->get_where('tbl_poster', array('status'=>0))->num_rows();
+    $data['videografi'] = $this->db->get_where('tbl_videografi', array('status'=>0))->num_rows();
+    $data['mobile_legend'] = $this->db->get_where('tbl_ml', array('status'=>0))->num_rows();
+    $data['pubgm'] = $this->db->get_where('tbl_pubgm', array('status'=>0))->num_rows();
+    $data['free_fire'] = $this->db->get_where('tbl_ff', array('status'=>0))->num_rows();
+    $data['cipta_puisi'] = $this->db->get_where('tbl_cipta_puisi', array('status'=>0))->num_rows();
+    $data['vocal_solo'] = $this->db->get_where('tbl_vocal_solo', array('status'=>0))->num_rows();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/page/dashboard');
 		$this->load->view('admin/footer');
@@ -25,7 +47,7 @@ class Page extends CI_Controller {
     $data['title'] = 'Panitia';
 		$data['hasil'] = $this->db->get('tbl_panitia')->result();
     $this->load->view('admin/header', $data);
-		$this->load->view('admin/panitia/main');
+		$this->load->view('admin/page/panitia');
 		$this->load->view('admin/footer');
 	}
 

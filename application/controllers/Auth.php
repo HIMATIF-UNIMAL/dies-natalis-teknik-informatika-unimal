@@ -38,6 +38,7 @@ class Auth extends CI_Controller {
 			$this->session->set_userdata($sesi);
 			$log = [
 				'nama' => $this->session->userdata('nama'),
+				'ket' => 'sukses',
 				'user' => $user,
 				'ip'=> $_SERVER['REMOTE_ADDR'],
 				'http'=> $_SERVER['HTTP_USER_AGENT']
@@ -45,6 +46,14 @@ class Auth extends CI_Controller {
 			$this->db->insert('log', $log);
 			redirect(base_url('page/dashboard'));
 		}else{
+			$log = [
+				'nama' => '',
+				'ket' => 'gagal',
+				'user' => $user,
+				'ip'=> $_SERVER['REMOTE_ADDR'],
+				'http'=> $_SERVER['HTTP_USER_AGENT']
+			];
+			$this->db->insert('log', $log);
 			$this->session->set_flashdata('msg',
 			'<div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-warning top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
