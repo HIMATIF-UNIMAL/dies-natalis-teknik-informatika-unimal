@@ -73,7 +73,7 @@ class Cipta_puisi extends CI_Controller {
 	public function pending()
 	{
 		$data['title'] = 'Pending';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 4])->row_array();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
 		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 0))->result();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/cipta_puisi/pending');

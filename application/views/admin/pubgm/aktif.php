@@ -25,9 +25,12 @@
                                     <td><a href="<?= base_url('file/'.$data->bukti) ?>"><?php echo htmlentities($data->bukti, ENT_QUOTES, 'UTF-8');?></a></td>
                                     <td><?php echo htmlentities($data->validasi, ENT_QUOTES, 'UTF-8');?></td>
                                   <td>
-                                  <a href="#" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#anggota<?= $data->id ?>">
-                                    <span class="tf-icons bx bx-user-circle"></span>
-                                  </a>
+                                    <a target="_blank" class="btn btn-icon btn-success" href="<?= base_url('tiket/pubgm/'.$data->slug) ?>">
+                                      <span class="tf-icons bx bxs-file-doc"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#anggota<?= $data->id ?>">
+                                      <span class="tf-icons bx bx-user-circle"></span>
+                                    </a>
                                   </td>
                               </tr>
                             <?php } ?>
