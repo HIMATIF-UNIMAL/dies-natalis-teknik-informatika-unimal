@@ -114,6 +114,16 @@ class Cipta_puisi extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
+  public function pdf()
+	{
+		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 1))->result();
+		$mpdf = new \Mpdf\Mpdf();
+		$html = $this->load->view('admin/cipta_puisi/print',$data,true);
+		$mpdf->WriteHTML($html);
+		//$mpdf->Output(); // opens in browser
+		$mpdf->Output('Absensi-cipta_puisi.pdf','D'); // it downloads the file into the user system, with give name
+	}
+
 	public function tolak()
 	{
 		$data['title'] = 'Tolak';

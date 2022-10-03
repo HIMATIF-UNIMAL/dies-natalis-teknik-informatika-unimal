@@ -28,7 +28,7 @@ class Pubgm extends CI_Controller {
 			'status' => $this->input->post('status'),
 			'user_log' => $this->session->userdata('nama'),
     );
-    $this->db->where('id', 6);
+    $this->db->where('id', 7);
     $this->db->update('tbl_setting' ,$data);
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">

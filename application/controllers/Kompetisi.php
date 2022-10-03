@@ -635,4 +635,9 @@ class Kompetisi extends CI_Controller {
 		$this->load->view('kompetisi/tutup');
     $this->load->view('kompetisi/include/footer');
 	}
+
+	public function not_found()
+	{
+    $this->load->view('errors/404');
+	}
 }

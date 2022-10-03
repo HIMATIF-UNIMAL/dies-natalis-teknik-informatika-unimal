@@ -4,7 +4,14 @@
               <div class="row">
                 <div class="col-12">
                   <div class="card">
-                    <h5 class="card-header"><?= $setting['kompetisi']?></h5>
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <div class="card-title mb-0">
+                      <h5><?= $setting['kompetisi'] ?></h5>
+                      </div>
+                      <div>
+                        <a href="<?= base_url('cipta_puisi/pdf') ?>" class="btn btn-danger btn-sm"><i class='bx bxs-file-pdf'></i> Absensi</a>
+                      </div>
+                    </div>
                     <div class="card-body">
                       <div class="table-responsive">
                         <table id="example" class="table table-bordered">
