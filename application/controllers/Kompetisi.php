@@ -620,6 +620,82 @@ class Kompetisi extends CI_Controller {
 		 }                 
 	}
 
+	public function problem_solving_coding()
+	{
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
+    $this->load->view('kompetisi/include/header', $data);
+		$this->load->view('kompetisi/problem_solving');
+    $this->load->view('kompetisi/include/footer');
+	}
+	public function daftar_problem_solving_coding()
+	{
+		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 32);
+
+		$config['upload_path']          = './file';
+		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
+		$config['encrypt_name']        = true;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('ktm')) {
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
+			redirect(base_url('kompetisi/problem_solving_coding'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['ktm'] = $fileData['file_name'];
+		}
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
+			redirect(base_url('kompetisi/problem_solving_coding'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto'] = $fileData['file_name'];
+		}
+					 $data = array(
+						'slug' => $slug,
+						'email' => $this->input->post('email'),
+						'nama' => $this->input->post('nama'),
+						'wa' => $this->input->post('wa'),
+						'jurusan' => $this->input->post('jurusan'),
+						'bukti' => $hasil['foto'],
+						'ktm' => $hasil['ktm'],
+						'status' => 0,
+				 );
+				 $this->db->insert('tbl_problem_solving',$data);
+				 redirect(base_url('kompetisi/sukses'));
+		               
+	}
+
 	public function sukses()
 	{
 		$data['setting']= ['kompetisi' => 'Sukses'];

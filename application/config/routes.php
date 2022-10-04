@@ -60,5 +60,6 @@ $route['mobile_legend'] = 'kompetisi/mobile_legend';
 $route['pubgm'] = 'kompetisi/pubgm';
 $route['free_fire'] = 'kompetisi/free_fire';
 $route['bootcamp'] = 'kompetisi/bootcamp';
+$route['problem_solving_coding'] = 'kompetisi/problem_solving_coding';
 $route['404_override'] = 'kompetisi/not_found';
 $route['translate_uri_dashes'] = FALSE;
