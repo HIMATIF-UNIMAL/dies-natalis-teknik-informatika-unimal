@@ -3,7 +3,7 @@
 application/config/mail.php
 application/config/database.php
 application/config/config.php
-file/*
+file/!index.html
 # IDE Files
 #-------------------------
 /nbproject/
