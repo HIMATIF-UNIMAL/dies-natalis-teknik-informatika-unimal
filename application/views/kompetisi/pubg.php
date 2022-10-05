@@ -106,15 +106,15 @@
                           <small class="text-light fw-semibold pb-5">Anggota Cadangan 1</small>
                           <div class="row">
                             <div class=" col-6 mb-3">
-                              <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                              <label class="form-label">Nama Lengkap </label>
                               <input type="text" class="form-control" name="nama4" >
                             </div>
                             <div class=" col-6 mb-3">
-                              <label class="form-label">Nickname <span class="text-danger">*</span></label>
+                              <label class="form-label">Nickname </label>
                               <input type="text" class="form-control" name="nickname4" >
                             </div>
                             <div class=" col-6 mb-3">
-                              <label class="form-label">id number <span class="text-danger">*</span></label>
+                              <label class="form-label">id number </label>
                               <input type="number" class="form-control" name="id_number4">
                             </div>
                           </div>

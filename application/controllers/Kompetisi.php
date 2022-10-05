@@ -24,6 +24,7 @@ class Kompetisi extends CI_Controller {
 		$this->load->view('kompetisi/tipografi');
     $this->load->view('kompetisi/include/footer');
 	}
+
 	public function daftar_tipografi()
 	{
 		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
@@ -117,7 +118,6 @@ class Kompetisi extends CI_Controller {
 						'status' => 0,
 						'bukti' => $hasil,
 				 );
- 
 				 $this->db->insert('tbl_poster',$data);
 				 redirect(base_url('kompetisi/sukses'));
 		 }                 
@@ -242,7 +242,7 @@ class Kompetisi extends CI_Controller {
 			$fileData = $this->upload->data();
 			 $hasil['foto'] = $fileData['file_name'];
 		}
-					 $data = array(
+					$data = array(
 						'slug' => $slug,
 						'email' => $this->input->post('email'),
 						'nama' => $this->input->post('nama'),
@@ -681,7 +681,7 @@ class Kompetisi extends CI_Controller {
 			$fileData = $this->upload->data();
 			 $hasil['foto'] = $fileData['file_name'];
 		}
-					 $data = array(
+					$data = array(
 						'slug' => $slug,
 						'email' => $this->input->post('email'),
 						'nama' => $this->input->post('nama'),
@@ -690,10 +690,9 @@ class Kompetisi extends CI_Controller {
 						'bukti' => $hasil['foto'],
 						'ktm' => $hasil['ktm'],
 						'status' => 0,
-				 );
-				 $this->db->insert('tbl_problem_solving',$data);
-				 redirect(base_url('kompetisi/sukses'));
-		               
+				);
+				$this->db->insert('tbl_problem_solving',$data);
+				redirect(base_url('kompetisi/sukses'));
 	}
 
 	public function sukses()
