@@ -242,7 +242,7 @@ class Kompetisi extends CI_Controller {
 			$fileData = $this->upload->data();
 			 $hasil['foto'] = $fileData['file_name'];
 		}
-					 $data = array(
+					$data = array(
 						'slug' => $slug,
 						'email' => $this->input->post('email'),
 						'nama' => $this->input->post('nama'),
