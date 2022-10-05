@@ -169,6 +169,36 @@
               </ul>
             </li>
 
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Problem Solving Coding</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('problem_solving_coding/setting') ?>" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('problem_solving_coding/pending') ?>" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('problem_solving_coding/aktif') ?>" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/problem_solving_coding/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('problem_solving_coding/tolak') ?>" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>

@@ -686,7 +686,7 @@ class Kompetisi extends CI_Controller {
 						'email' => $this->input->post('email'),
 						'nama' => $this->input->post('nama'),
 						'wa' => $this->input->post('wa'),
-						'jurusan' => $this->input->post('jurusan'),
+						'univ' => $this->input->post('univ'),
 						'bukti' => $hasil['foto'],
 						'ktm' => $hasil['ktm'],
 						'status' => 0,
