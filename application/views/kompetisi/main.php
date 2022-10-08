@@ -63,7 +63,7 @@
                     <div class="card-body">
                     <h5 class="card-title"><?php echo htmlentities($data->kompetisi, ENT_QUOTES, 'UTF-8');?></h5>
                       <p class="card-text">
-                          Biaya Registrasi : <br> Rp. <?= number_format($data->price) ?>  <br>
+                      biaya registrasi per tim (3 orang) : <br> Rp. <?= number_format($data->price) ?>  <br>
                       </p>
                       <p class="card-text">
                           Deadline Pendaftaran : <br> <?= date('d F Y', strtotime( $data->deadline)) ?> <br>

@@ -14,7 +14,7 @@ class Cipta_puisi extends CI_Controller {
 		$data['title'] = 'Setting';
 		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/setting');
+		$this->load->view('admin/setting-bacapuisi');
 		$this->load->view('admin/footer');
 	}
 
