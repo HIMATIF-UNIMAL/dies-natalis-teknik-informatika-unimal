@@ -297,7 +297,7 @@
             <li class="menu-item  <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/cipta_puisi/aktif')){ echo 'active open';} ?>">
               <a href="javascript:void(0);" class="menu-link menu-toggle ">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Layouts">Cipta Puisi</div>
+                <div data-i18n="Layouts">Baca Puisi</div>
               </a>
 
               <ul class="menu-sub">
