@@ -133,6 +133,10 @@
         <h3>jenis Kegiatan</h3>
         <p><?= $setting['kompetisi'] ?></p>
       </section>
+      <section class="ticket__section">
+        <h3>Jadwal Kompetisi</h3>
+        <p><?= date('d F Y', strtotime($setting['jadwal'])) ?></p>
+      </section>
     </div>
     <footer class="ticket__footer" style="padding: 20px 5px !important;">
       <span><img width="300" height="80" id="barcode"></img></span>
