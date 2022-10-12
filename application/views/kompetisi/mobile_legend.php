@@ -271,7 +271,7 @@
             </div>
             <!-- / Content -->
             <?php
-              if($this->session->flashdata('validasi') == 0 ){
+              if($this->session->flashdata('validasi') == 1 ){
                 echo '<div class="position-fixed" style="z-index: 9999999">
                 <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="toast-header">

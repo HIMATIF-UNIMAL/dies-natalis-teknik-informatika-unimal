@@ -68,6 +68,14 @@
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number, ENT_QUOTES, 'UTF-8');?>" readonly>
                           </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs) ?>" target="_blank"><?php echo htmlentities($data->krs, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto) ?>" target="_blank"><?php echo htmlentities($data->foto, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
 
                           <hr class=" my-2">
                           <small class="text-light fw-semibold pb-5">Anggota 1</small>
@@ -82,6 +90,14 @@
                           <div class="mb-3">
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number1, ENT_QUOTES, 'UTF-8');?>" readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs1) ?>" target="_blank"><?php echo htmlentities($data->krs1, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto1) ?>" target="_blank"><?php echo htmlentities($data->foto1, ENT_QUOTES, 'UTF-8');?></a>
                           </div>
 
                           <hr class=" my-2">
@@ -98,6 +114,14 @@
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number2, ENT_QUOTES, 'UTF-8');?>" readonly>
                           </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs2) ?>" target="_blank"><?php echo htmlentities($data->krs2, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto2) ?>" target="_blank"><?php echo htmlentities($data->foto2, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
 
                           <hr class=" my-2">
                           <small class="text-light fw-semibold pb-5">Anggota 3</small>
@@ -112,6 +136,14 @@
                           <div class="mb-3">
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number3, ENT_QUOTES, 'UTF-8');?>" readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs3) ?>" target="_blank"><?php echo htmlentities($data->krs3, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto3) ?>" target="_blank"><?php echo htmlentities($data->foto3, ENT_QUOTES, 'UTF-8');?></a>
                           </div>
 
                           <hr class=" my-2">
@@ -128,6 +160,14 @@
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number4, ENT_QUOTES, 'UTF-8');?>" readonly>
                           </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs4) ?>" target="_blank"><?php echo htmlentities($data->krs4, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto4) ?>" target="_blank"><?php echo htmlentities($data->foto4, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
 
                           <hr class=" my-2">
                           <small class="text-light fw-semibold pb-5">Anggota Cadangan 1</small>
@@ -143,6 +183,14 @@
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number5, ENT_QUOTES, 'UTF-8');?>" readonly>
                           </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs5) ?>" target="_blank"><?php echo htmlentities($data->krs5, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto5) ?>" target="_blank"><?php echo htmlentities($data->foto5, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
 
                           <hr class=" my-2">
                           <small class="text-light fw-semibold pb-5">Anggota Cadangan 2</small>
@@ -157,6 +205,14 @@
                           <div class="mb-3">
                             <label class="form-label">ID Number</label>
                             <input type="text" class="form-control" value="<?php echo htmlentities($data->id_number6, ENT_QUOTES, 'UTF-8');?>" readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">KRS</label><br>
+                            <a href="<?= base_url('file/'.$data->krs6) ?>" target="_blank"><?php echo htmlentities($data->krs6, ENT_QUOTES, 'UTF-8');?></a>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Foto</label><br>
+                            <a href="<?= base_url('file/'.$data->foto6) ?>" target="_blank"><?php echo htmlentities($data->foto6, ENT_QUOTES, 'UTF-8');?></a>
                           </div>
                     </div>
                   <div class="modal-footer text-center">
