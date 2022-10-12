@@ -29,18 +29,6 @@
                             <input type="text" class="form-control" name="tim" required>
                           </div>
                           <div class="mb-3">
-                            <label class="form-label">Nama Captain <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="nama" required>
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Nickname Captain <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="nickname" required>
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Id number <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="id_number" required>
-                          </div>
-                          <div class="mb-3">
                             <label class="form-label">no. WA<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="wa" required>
                           </div>
@@ -51,6 +39,24 @@
                               ekstensi yang diizinkan png, jpg, pdf
                             </div>
                           </div>
+
+                          <hr class="m-0 my-4">
+                          <small class="text-light fw-semibold pb-5">Captain</small>
+                          <div class="row">
+                            <div class="col-6 mb-3">
+                              <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                              <input type="text" class="form-control" name="nama" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                              <label class="form-label">Nickname  <span class="text-danger">*</span></label>
+                              <input type="text" class="form-control" name="nickname" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                              <label class="form-label">Id number <span class="text-danger">*</span></label>
+                              <input type="number" class="form-control" name="id_number" required>
+                            </div>
+                          </div>
+
                           <hr class="m-0 my-4">
                           <small class="text-light fw-semibold pb-5">Anggota 1</small>
                           <div class="row">

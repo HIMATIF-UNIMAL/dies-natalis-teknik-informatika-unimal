@@ -352,7 +352,7 @@ class Kompetisi extends CI_Controller {
 
 		$config['upload_path']          = './file';
 		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
-		// $config['encrypt_name']        = true;
+		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('bukti')) {
 			$this->session->set_flashdata('validasi', 1);
