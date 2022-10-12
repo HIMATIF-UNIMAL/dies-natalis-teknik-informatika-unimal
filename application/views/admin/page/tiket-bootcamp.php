@@ -134,7 +134,7 @@
         <p><?= $setting['kompetisi'] ?></p>
       </section>
       <section class="ticket__section">
-        <h3>Jadwal Kompetisi</h3>
+        <h3>Jadwal</h3>
         <p><?= date('d F Y', strtotime($setting['jadwal'])) ?></p>
       </section>
     </div>

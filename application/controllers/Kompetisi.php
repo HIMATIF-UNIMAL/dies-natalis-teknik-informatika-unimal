@@ -343,6 +343,7 @@ class Kompetisi extends CI_Controller {
 		$this->load->view('kompetisi/mobile_legend');
     $this->load->view('kompetisi/include/footer');
 	}
+	
 	public function daftar_mobile_legend()
 	{
 		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
