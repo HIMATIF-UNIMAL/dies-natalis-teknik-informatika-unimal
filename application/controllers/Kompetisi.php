@@ -526,12 +526,9 @@ class Kompetisi extends CI_Controller {
 								'status' => 0,
 								'bukti' => $hasil['bukti'],
 		);
-		 
 		$this->db->insert('tbl_ml',$data);
 		redirect(base_url('kompetisi/sukses'));
 	}
-
-
 
 	public function pubgm()
 	{
