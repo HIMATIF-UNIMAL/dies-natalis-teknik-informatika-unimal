@@ -362,13 +362,6 @@ class Kompetisi extends CI_Controller {
 			 $hasil['bukti'] = $fileData['file_name'];
 		}
 
-		if (!$this->upload->do_upload('krs')) {
-			$this->session->set_flashdata('validasi', 1);
-			redirect(base_url('kompetisi/mobile_legend'));
-		} else {
-			$fileData = $this->upload->data();
-			 $hasil['krs'] = $fileData['file_name'];
-		}
 		if (!$this->upload->do_upload('foto')) {
 			$this->session->set_flashdata('validasi', 1);
 			redirect(base_url('kompetisi/mobile_legend'));
@@ -377,13 +370,6 @@ class Kompetisi extends CI_Controller {
 			 $hasil['foto'] = $fileData['file_name'];
 		}
 
-		if (!$this->upload->do_upload('krs1')) {
-			$this->session->set_flashdata('validasi', 1);
-			redirect(base_url('kompetisi/mobile_legend'));
-		} else {
-			$fileData = $this->upload->data();
-			 $hasil['krs1'] = $fileData['file_name'];
-		}
 		if (!$this->upload->do_upload('foto1')) {
 			$this->session->set_flashdata('validasi', 1);
 			redirect(base_url('kompetisi/mobile_legend'));
@@ -392,13 +378,6 @@ class Kompetisi extends CI_Controller {
 			 $hasil['foto1'] = $fileData['file_name'];
 		}
 
-		if (!$this->upload->do_upload('krs2')) {
-			$this->session->set_flashdata('validasi', 1);
-			redirect(base_url('kompetisi/mobile_legend'));
-		} else {
-			$fileData = $this->upload->data();
-			 $hasil['krs2'] = $fileData['file_name'];
-		}
 		if (!$this->upload->do_upload('foto2')) {
 			$this->session->set_flashdata('validasi', 1);
 			redirect(base_url('kompetisi/mobile_legend'));
@@ -406,14 +385,7 @@ class Kompetisi extends CI_Controller {
 			$fileData = $this->upload->data();
 			 $hasil['foto2'] = $fileData['file_name'];
 		}
-		
-		if (!$this->upload->do_upload('krs3')) {
-			$this->session->set_flashdata('validasi', 1);
-			redirect(base_url('kompetisi/mobile_legend'));
-		} else {
-			$fileData = $this->upload->data();
-			 $hasil['krs3'] = $fileData['file_name'];
-		}
+
 		if (!$this->upload->do_upload('foto3')) {
 			$this->session->set_flashdata('validasi', 1);
 			redirect(base_url('kompetisi/mobile_legend'));
@@ -422,13 +394,6 @@ class Kompetisi extends CI_Controller {
 			 $hasil['foto3'] = $fileData['file_name'];
 		}
 
-		if (!$this->upload->do_upload('krs4')) {
-			$this->session->set_flashdata('validasi', 1);
-			redirect(base_url('kompetisi/mobile_legend'));
-		} else {
-			$fileData = $this->upload->data();
-			 $hasil['krs4'] = $fileData['file_name'];
-		}
 		if (!$this->upload->do_upload('foto4')) {
 			$this->session->set_flashdata('validasi', 1);
 			redirect(base_url('kompetisi/mobile_legend'));
@@ -437,51 +402,6 @@ class Kompetisi extends CI_Controller {
 			 $hasil['foto4'] = $fileData['file_name'];
 		}
 		
-		if(empty($_FILES['krs5']['name'])){
-			$hasil['krs5'] = null;
-		}else{
-			if (!$this->upload->do_upload('krs5')) {
-				$this->session->set_flashdata('validasi', 1);
-				redirect(base_url('kompetisi/mobile_legend'));
-			} else {
-				$fileData = $this->upload->data();
-				 $hasil['krs5'] = $fileData['file_name'];
-			}
-		}
-		if(empty($_FILES['foto5']['name'])){
-			$hasil['foto5'] = null;
-		}else{
-			if (!$this->upload->do_upload('foto5')) {
-				$this->session->set_flashdata('validasi', 1);
-				redirect(base_url('kompetisi/mobile_legend'));
-			} else {
-				$fileData = $this->upload->data();
-				 $hasil['foto5'] = $fileData['file_name'];
-			}
-		}
-
-		if(empty($_FILES['krs6']['name'])){
-			$hasil['krs6'] = null;
-		}else{
-			if (!$this->upload->do_upload('krs6')) {
-				$this->session->set_flashdata('validasi', 1);
-				redirect(base_url('kompetisi/mobile_legend'));
-			} else {
-				$fileData = $this->upload->data();
-				 $hasil['krs6'] = $fileData['file_name'];
-			}
-		}
-		if(empty($_FILES['foto6']['name'])){
-			$hasil['foto6'] = null;
-		}else{
-			if (!$this->upload->do_upload('foto6')) {
-				$this->session->set_flashdata('validasi', 1);
-				redirect(base_url('kompetisi/mobile_legend'));
-			} else {
-				$fileData = $this->upload->data();
-				 $hasil['foto6'] = $fileData['file_name'];
-			}
-		}
 
 		$data = array(
 								'slug' => $slug,
@@ -490,38 +410,23 @@ class Kompetisi extends CI_Controller {
 								'nama' => $this->input->post('nama'),
 								'nickname' => $this->input->post('nickname'),
 								'id_number' => $this->input->post('id_number'),
-								'krs' => $hasil['krs'],
 								'foto' => $hasil['foto'],
 								'nama1' => $this->input->post('nama1'),
 								'nickname1' => $this->input->post('nickname1'),
 								'id_number1' => $this->input->post('id_number1'),
-								'krs1' => $hasil['krs1'],
 								'foto1' => $hasil['foto1'],
 								'nama2' => $this->input->post('nama2'),
 								'nickname2' => $this->input->post('nickname2'),
 								'id_number2' => $this->input->post('id_number2'),
-								'krs2' => $hasil['krs2'],
 								'foto2' => $hasil['foto2'],
 								'nama3' => $this->input->post('nama3'),
 								'nickname3' => $this->input->post('nickname3'),
 								'id_number3' => $this->input->post('id_number3'),
-								'krs3' => $hasil['krs3'],
 								'foto3' => $hasil['foto3'],
 								'nama4' => $this->input->post('nama4'),
 								'nickname4' => $this->input->post('nickname4'),
 								'id_number4' => $this->input->post('id_number4'),
-								'krs4' => $hasil['krs4'],
 								'foto4' => $hasil['foto4'],
-								'nama5' => $this->input->post('nama5'),
-								'nickname5' => $this->input->post('nickname5'),
-								'id_number5' => $this->input->post('id_number5'),
-								'krs5' => $hasil['krs5'],
-								'foto5' => $hasil['foto5'],
-								'nama6' => $this->input->post('nama6'),
-								'nickname6' => $this->input->post('nickname6'),
-								'id_number6' => $this->input->post('id_number6'),
-								'krs6' => $hasil['krs6'],
-								'foto6' => $hasil['foto6'],
 								'wa' => $this->input->post('wa'),
 								'status' => 0,
 								'bukti' => $hasil['bukti'],
