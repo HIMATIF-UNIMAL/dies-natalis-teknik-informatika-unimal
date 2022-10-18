@@ -44,7 +44,7 @@
                           <small class="text-light fw-semibold pb-5">Captain</small>
 
                           <div class="row">
-                            <div class="col-12 mb-3">
+                            <div class="col-6 mb-3">
                               <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="nama" required>
                             </div>
@@ -57,25 +57,17 @@
                               <input type="number" class="form-control" name="id_number" required>
                             </div>
                             <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="krs" required>
-                              <div class="form-text">
-                              ekstensi yang diizinkan png, jpg, pdf
-                            </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                              <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
+                              <label class="form-label">Foto <span class="text-danger">*</span></label>
                               <input type="file" class="form-control" name="foto" required>
                               <div class="form-text">
                               ekstensi yang diizinkan png, jpg, pdf
                             </div>
-                            </div>
                           </div>
 
                           <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota 1</small>
+                          <small class="text-light fw-semibold pb-1">Anggota 1</small>
                           <div class="row">
-                            <div class=" col-12 mb-3">
+                            <div class=" col-6 mb-3">
                               <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="nama1" required>
                             </div>
@@ -88,14 +80,7 @@
                               <input type="number" class="form-control" name="id_number1" required>
                             </div>
                             <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="krs1" required>
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                            <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
+                            <label class="form-label">Foto<span class="text-danger">*</span></label>
                               <input type="file" class="form-control" name="foto1" required>
                               <div class="form-text">
                                 ekstensi yang diizinkan png, jpg, pdf
@@ -104,9 +89,9 @@
                           </div>
 
                           <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota 2</small>
+                          <small class="text-light fw-semibold pb-1">Anggota 2</small>
                           <div class="row">
-                            <div class=" col-12 mb-3">
+                            <div class=" col-6 mb-3">
                               <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="nama2" required>
                             </div>
@@ -119,14 +104,7 @@
                               <input type="number" class="form-control" name="id_number2" required>
                             </div>
                             <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="krs2" required>
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                            <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
+                            <label class="form-label">foto<span class="text-danger">*</span></label>
                               <input type="file" class="form-control" name="foto2" required>
                               <div class="form-text">
                                 ekstensi yang diizinkan png, jpg, pdf
@@ -135,9 +113,9 @@
                           </div>
 
                           <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota 3</small>
+                          <small class="text-light fw-semibold pb-1">Anggota 3</small>
                           <div class="row">
-                            <div class=" col-12 mb-3">
+                            <div class=" col-6 mb-3">
                               <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="nama3" required>
                             </div>
@@ -150,14 +128,7 @@
                               <input type="number" class="form-control" name="id_number3" required>
                             </div>
                             <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="krs3" required>
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                            <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
+                            <label class="form-label">foto  <span class="text-danger">*</span></label>
                               <input type="file" class="form-control" name="foto3" required>
                               <div class="form-text">
                                 ekstensi yang diizinkan png, jpg, pdf
@@ -166,9 +137,9 @@
                           </div>
 
                           <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota 4</small>
+                          <small class="text-light fw-semibold pb-1">Anggota 4</small>
                           <div class="row">
-                            <div class=" col-12 mb-3">
+                            <div class=" col-6 mb-3">
                               <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="nama4" required>
                             </div>
@@ -181,77 +152,8 @@
                               <input type="text" class="form-control" name="id_number4" required>
                             </div>
                             <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="krs4" required>
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                            <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
+                            <label class="form-label">foto <span class="text-danger">*</span></label>
                               <input type="file" class="form-control" name="foto4" required>
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                          </div>
-
-                          <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota Cadangan 1</small>
-                          <div class="row">
-                            <div class=" col-12 mb-3">
-                              <label class="form-label">Nama Lengkap</label>
-                              <input type="text" class="form-control" name="nama5">
-                            </div>
-                            <div class=" col-6 mb-3">
-                              <label class="form-label">Nickname</label>
-                              <input type="text" class="form-control" name="nickname5">
-                            </div>
-                            <div class=" col-6 mb-3">
-                              <label class="form-label">id number</label>
-                              <input type="number" class="form-control" name="id_number5">
-                            </div>
-                            <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan</label>
-                              <input type="file" class="form-control" name="krs5">
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                              <label class="form-label">Foto</label>
-                              <input type="file" class="form-control" name="foto5">
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                          </div>
-
-                          <hr class="m-0 my-4">
-                          <small class="text-light fw-semibold pb-5">Anggota cadangan 2</small>
-                          <div class="row">
-                            <div class=" col-12 mb-3">
-                              <label class="form-label">Nama Lengkap</label>
-                              <input type="text" class="form-control" name="nama6">
-                            </div>
-                            <div class=" col-6 mb-3">
-                              <label class="form-label">Nickname</label>
-                              <input type="text" class="form-control" name="nickname6">
-                            </div>
-                            <div class=" col-6 mb-3">
-                              <label class="form-label">id number</label>
-                              <input type="number" class="form-control" name="id_number6">
-                            </div>
-                            <div class="col-6 mb-3">
-                              <label class="form-label">KRS Berjalan</label>
-                              <input type="file" class="form-control" name="krs6">
-                              <div class="form-text">
-                                ekstensi yang diizinkan png, jpg, pdf
-                              </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                            <label class="form-label">selfie memegang ktm/krs  <span class="text-danger">*</span></label>
-                              <input type="file" class="form-control" name="foto6" >
                               <div class="form-text">
                                 ekstensi yang diizinkan png, jpg, pdf
                               </div>
