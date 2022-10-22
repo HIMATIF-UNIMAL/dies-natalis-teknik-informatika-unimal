@@ -24,6 +24,7 @@ class Kompetisi extends CI_Controller {
 		$this->load->view('kompetisi/tipografi');
     $this->load->view('kompetisi/include/footer');
 	}
+
 	public function daftar_tipografi()
 	{
 		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
@@ -117,7 +118,6 @@ class Kompetisi extends CI_Controller {
 						'status' => 0,
 						'bukti' => $hasil,
 				 );
- 
 				 $this->db->insert('tbl_poster',$data);
 				 redirect(base_url('kompetisi/sukses'));
 		 }                 
@@ -242,7 +242,7 @@ class Kompetisi extends CI_Controller {
 			$fileData = $this->upload->data();
 			 $hasil['foto'] = $fileData['file_name'];
 		}
-					 $data = array(
+					$data = array(
 						'slug' => $slug,
 						'email' => $this->input->post('email'),
 						'nama' => $this->input->post('nama'),
@@ -343,6 +343,8 @@ class Kompetisi extends CI_Controller {
 		$this->load->view('kompetisi/mobile_legend');
     $this->load->view('kompetisi/include/footer');
 	}
+	
+	
 	public function daftar_mobile_legend()
 	{
 		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
@@ -352,60 +354,85 @@ class Kompetisi extends CI_Controller {
 		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
-		if ( ! $this->upload->do_upload('foto')){
-				$this->session->set_flashdata('msg',
-				'<div class="position-fixed" style="z-index: 9999999">
-				<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
-					<div class="toast-header">
-						<i class="bx bx-bell me-2"></i>
-						<div class="me-auto fw-semibold">GAGAL!</div>
-						<small>Now</small>
-						<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-					</div>
-					<div class="toast-body">
-						Pastikan file yang anda input berekstensi jpg, png atau pdf 
-					</div>
-				</div>
-			</div>
-			');
-				redirect(base_url('kompetisi/mobile_legend'));
-	 }else{
-					 $data = array('foto' => $this->upload->data());
-					 $uploadData = $this->upload->data();
-					 $hasil = $uploadData['file_name'];
-					 $data = array(
-						'slug' => $slug,
-						'email' => $this->input->post('email'),
-						'tim' => $this->input->post('tim'),
-						'nama' => $this->input->post('nama'),
-						'nickname' => $this->input->post('nickname'),
-						'id_number' => $this->input->post('id_number'),
-						'nama1' => $this->input->post('nama1'),
-						'nickname1' => $this->input->post('nickname1'),
-						'id_number1' => $this->input->post('id_number1'),
-						'nama2' => $this->input->post('nama2'),
-						'nickname2' => $this->input->post('nickname2'),
-						'id_number2' => $this->input->post('id_number2'),
-						'nama3' => $this->input->post('nama3'),
-						'nickname3' => $this->input->post('nickname3'),
-						'id_number3' => $this->input->post('id_number3'),
-						'nama4' => $this->input->post('nama4'),
-						'nickname4' => $this->input->post('nickname4'),
-						'id_number4' => $this->input->post('id_number4'),
-						'nama5' => $this->input->post('nama5'),
-						'nickname5' => $this->input->post('nickname5'),
-						'id_number5' => $this->input->post('id_number5'),
-						'nama6' => $this->input->post('nama6'),
-						'nickname6' => $this->input->post('nickname6'),
-						'id_number6' => $this->input->post('id_number6'),
-						'wa' => $this->input->post('wa'),
-						'status' => 0,
-						'bukti' => $hasil,
-				 );
- 
-				 $this->db->insert('tbl_ml',$data);
-				 redirect(base_url('kompetisi/sukses'));
-		 }                 
+		if (!$this->upload->do_upload('bukti')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['bukti'] = $fileData['file_name'];
+		}
+
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto'] = $fileData['file_name'];
+		}
+
+		if (!$this->upload->do_upload('foto1')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto1'] = $fileData['file_name'];
+		}
+
+		if (!$this->upload->do_upload('foto2')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto2'] = $fileData['file_name'];
+		}
+
+		if (!$this->upload->do_upload('foto3')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto3'] = $fileData['file_name'];
+		}
+
+		if (!$this->upload->do_upload('foto4')) {
+			$this->session->set_flashdata('validasi', 1);
+			redirect(base_url('kompetisi/mobile_legend'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto4'] = $fileData['file_name'];
+		}
+		
+
+		$data = array(
+								'slug' => $slug,
+								'email' => $this->input->post('email'),
+								'tim' => $this->input->post('tim'),
+								'nama' => $this->input->post('nama'),
+								'nickname' => $this->input->post('nickname'),
+								'id_number' => $this->input->post('id_number'),
+								'foto' => $hasil['foto'],
+								'nama1' => $this->input->post('nama1'),
+								'nickname1' => $this->input->post('nickname1'),
+								'id_number1' => $this->input->post('id_number1'),
+								'foto1' => $hasil['foto1'],
+								'nama2' => $this->input->post('nama2'),
+								'nickname2' => $this->input->post('nickname2'),
+								'id_number2' => $this->input->post('id_number2'),
+								'foto2' => $hasil['foto2'],
+								'nama3' => $this->input->post('nama3'),
+								'nickname3' => $this->input->post('nickname3'),
+								'id_number3' => $this->input->post('id_number3'),
+								'foto3' => $hasil['foto3'],
+								'nama4' => $this->input->post('nama4'),
+								'nickname4' => $this->input->post('nickname4'),
+								'id_number4' => $this->input->post('id_number4'),
+								'foto4' => $hasil['foto4'],
+								'wa' => $this->input->post('wa'),
+								'status' => 0,
+								'bukti' => $hasil['bukti'],
+		);
+		$this->db->insert('tbl_ml',$data);
+		redirect(base_url('kompetisi/sukses'));
 	}
 
 	public function pubgm()
@@ -618,6 +645,81 @@ class Kompetisi extends CI_Controller {
 				 $this->db->insert('tbl_bootcamp',$data);
 				 redirect(base_url('kompetisi/sukses'));
 		 }                 
+	}
+
+	public function problem_solving_coding()
+	{
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+		if($data['setting']['status'] != 1){
+			redirect(base_url('kompetisi/tutup'));
+		}
+    $this->load->view('kompetisi/include/header', $data);
+		$this->load->view('kompetisi/problem_solving');
+    $this->load->view('kompetisi/include/footer');
+	}
+	public function daftar_problem_solving_coding()
+	{
+		$karakter = 'abcdefghijklmnopqrstuvwxyz123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 32);
+
+		$config['upload_path']          = './file';
+		$config['allowed_types']        = 'img|png|jpeg|gif|jpg|pdf|doc|docx';
+		$config['encrypt_name']        = true;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('ktm')) {
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
+			redirect(base_url('kompetisi/problem_solving_coding'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['ktm'] = $fileData['file_name'];
+		}
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('msg',
+			'<div class="position-fixed" style="z-index: 9999999">
+			<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<i class="bx bx-bell me-2"></i>
+					<div class="me-auto fw-semibold">GAGAL!</div>
+					<small>Now</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Pastikan file yang anda input berekstensi jpg, png atau pdf 
+				</div>
+			</div>
+		</div>
+		');
+			redirect(base_url('kompetisi/problem_solving_coding'));
+		} else {
+			$fileData = $this->upload->data();
+			 $hasil['foto'] = $fileData['file_name'];
+		}
+					$data = array(
+						'slug' => $slug,
+						'email' => $this->input->post('email'),
+						'nama' => $this->input->post('nama'),
+						'wa' => $this->input->post('wa'),
+						'univ' => $this->input->post('univ'),
+						'bukti' => $hasil['foto'],
+						'ktm' => $hasil['ktm'],
+						'status' => 0,
+				);
+				$this->db->insert('tbl_problem_solving',$data);
+				redirect(base_url('kompetisi/sukses'));
 	}
 
 	public function sukses()

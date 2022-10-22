@@ -83,6 +83,21 @@ class Tiket extends CI_Controller {
     }
 	}
 
+  public function problem_solving_coding($slug)
+	{
+    $data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+    $data['slug'] = $this->db->get_where('tbl_problem_solving', ['slug' => $slug])->row_array();
+    if( $slug == null){
+      redirect(base_url());
+    }elseif($slug != $data['slug']['slug']){
+      redirect(base_url());
+    }elseif($data['slug']['status'] != 1){
+      redirect(base_url());
+    }else{
+      $this->load->view('admin/page/tiket', $data); 
+    }
+	}
+
   public function mobile_legend($slug)
 	{
     $data['setting'] = $this->db->get_where('tbl_setting', ['id' => 6])->row_array();
@@ -125,6 +140,21 @@ class Tiket extends CI_Controller {
       redirect(base_url());
     }else{
       $this->load->view('admin/page/tiket-game', $data); 
+    }
+	}
+
+  public function bootcamp($slug)
+	{
+    $data['setting'] = $this->db->get_where('tbl_setting', ['id' => 9])->row_array();
+    $data['slug'] = $this->db->get_where('tbl_bootcamp', ['slug' => $slug])->row_array();
+    if( $slug == null){
+      redirect(base_url());
+    }elseif($slug != $data['slug']['slug']){
+      redirect(base_url());
+    }elseif($data['slug']['status'] != 1){
+      redirect(base_url());
+    }else{
+      $this->load->view('admin/page/tiket-bootcamp', $data); 
     }
 	}
 }

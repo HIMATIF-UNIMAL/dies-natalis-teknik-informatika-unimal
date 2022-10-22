@@ -9,7 +9,7 @@ a rich set of libraries for commonly needed tasks, as well as a simple
 interface and logical structure to access these libraries. CodeIgniter lets
 you creatively focus on your project by minimizing the amount of code needed
 for a given task.
-
+ 
 *******************
 Release Information
 *******************
@@ -50,7 +50,7 @@ Please see the `license
 agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
-Resources
+Resources 
 *********
 
 -  `User Guide <https://codeigniter.com/docs>`_

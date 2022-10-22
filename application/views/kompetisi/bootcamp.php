@@ -17,7 +17,7 @@
                         </div>
                         <p class="card-text">
                           Deadline Pendaftaran : <?= date('d F Y', strtotime( $setting['deadline'])) ?> <br>
-                          Biaya registrasi : Rp. <?= number_format($setting['price']) ?> 
+                          biaya registrasi per tim (3 orang) : Rp. <?= number_format($setting['price']) ?> 
                         </p>
                         <?php echo form_open_multipart('kompetisi/daftar_bootcamp');?>
                           <div class="mb-3">

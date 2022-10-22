@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cipta_puisi extends CI_Controller {
+class Problem_solving_coding extends CI_Controller {
 
   function __construct(){
 		parent::__construct();
@@ -12,9 +12,9 @@ class Cipta_puisi extends CI_Controller {
 	public function setting()
 	{
 		$data['title'] = 'Setting';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/setting-bacapuisi');
+		$this->load->view('admin/setting');
 		$this->load->view('admin/footer');
 	}
 
@@ -28,7 +28,7 @@ class Cipta_puisi extends CI_Controller {
 			'status' => $this->input->post('status'),
 			'user_log' => $this->session->userdata('nama'),
     );
-    $this->db->where('id', 5);
+    $this->db->where('id', 10);
     $this->db->update('tbl_setting' ,$data);
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -45,13 +45,13 @@ class Cipta_puisi extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('cipta_puisi/setting')); 
+    redirect(base_url('problem_solving_coding/setting')); 
 	}
 
 	public function aksi_tolak($id){
 		$this->db->set('status', 2);
 		$this->db->where('id', $id);
-    $this->db->update('tbl_cipta_puisi');
+    $this->db->update('tbl_problem_solving');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -67,16 +67,16 @@ class Cipta_puisi extends CI_Controller {
       </div>
     </div>
     ');
-    redirect(base_url('cipta_puisi/pending')); 
+    redirect(base_url('problem_solving_coding/pending')); 
 	}
 
 	public function pending()
 	{
 		$data['title'] = 'Pending';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 0))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_problem_solving', array('status'=> 0))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/cipta_puisi/pending');
+		$this->load->view('admin/problem_solving_coding/pending');
 		$this->load->view('admin/footer');
 	}
 
@@ -84,7 +84,7 @@ class Cipta_puisi extends CI_Controller {
 	{
     $this->db->set('status', 1);
     $this->db->where('id', $id);
-    $this->db->update('tbl_cipta_puisi');
+    $this->db->update('tbl_problem_solving');
     $this->_sendEmail($id, 'acc');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
@@ -101,43 +101,43 @@ class Cipta_puisi extends CI_Controller {
       </div>
     </div>
     ');
-		redirect(base_url('cipta_puisi/pending')); 
+		redirect(base_url('problem_solving_coding/pending')); 
 	}
 
   public function aktif()
 	{
 		$data['title'] = 'Aktif';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 1))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_problem_solving', array('status'=> 1))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/cipta_puisi/aktif');
+		$this->load->view('admin/problem_solving_coding/aktif');
 		$this->load->view('admin/footer');
 	}
 
-  public function pdf()
-	{
-		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 1))->result();
-		$mpdf = new \Mpdf\Mpdf();
-		$html = $this->load->view('admin/cipta_puisi/print',$data,true);
-		$mpdf->WriteHTML($html);
-		//$mpdf->Output(); // opens in browser
-		$mpdf->Output('Absensi-cipta_puisi.pdf','D'); // it downloads the file into the user system, with give name
-	}
+  // public function pdf()
+	// {
+	// 	$data['hasil'] = $this->db->get_where('tbl_problem_solving', array('status'=> 1))->result();
+	// 	$mpdf = new \Mpdf\Mpdf();
+	// 	$html = $this->load->view('admin/problem_solving_coding/print',$data,true);
+	// 	$mpdf->WriteHTML($html);
+	// 	//$mpdf->Output(); // opens in browser
+	// 	$mpdf->Output('Absensi-problem_solving_coding.pdf','D'); // it downloads the file into the user system, with give name
+	// }
 
 	public function tolak()
 	{
 		$data['title'] = 'Tolak';
-		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 5])->row_array();
-		$data['hasil'] = $this->db->get_where('tbl_cipta_puisi', array('status'=> 2))->result();
+		$data['setting'] = $this->db->get_where('tbl_setting', ['id' => 10])->row_array();
+		$data['hasil'] = $this->db->get_where('tbl_problem_solving', array('status'=> 2))->result();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/cipta_puisi/tolak');
+		$this->load->view('admin/problem_solving_coding/tolak');
 		$this->load->view('admin/footer');
 	}
 
 	private function _sendEmail($id, $type)
   {
-      $user = $this->db->get_where('tbl_cipta_puisi', ['id' => $id])->row();
-      $setting = $this->db->get_where('tbl_setting', ['id' => 5])->row();
+      $user = $this->db->get_where('tbl_problem_solving', ['id' => $id])->row();
+      $setting = $this->db->get_where('tbl_setting', ['id' => 10])->row();
       $this->load->library('email');
       $config = $this->config->item('mail');
       $addreas = $this->config->item('addreas');
@@ -192,7 +192,7 @@ class Cipta_puisi extends CI_Controller {
                                 </tr>
                                 <tr style="border-collapse:collapse">
                                   <td align="left" style="padding:0;Margin:0;padding-bottom:10px;padding-top:15px"><p style="Margin:0;font-size:16px;line-height:24px;color:#333333">
-                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/cipta_puisi/'. $user->slug .'">'.base_url().'tiket/cipta_puisi/'. $user->slug .'</a>
+                                    <span style="color: #71dd37 !important;">Status Pembayaran Kamu telah di validasi oleh admin!!</span> <br>Silahkan klik link dibawah ini untuk dapat melihat tiket peserta : <br><br> <a href="'.base_url().'tiket/problem_solving_coding/'. $user->slug .'">'.base_url().'tiket/problem_solving_coding/'. $user->slug .'</a>
                                     <br><br>untuk Info lebih lanjut, silahkan gabung ke grub whatsapp berikut : <br> <a href="'. $setting->wa .'">'. $setting->wa .'</a>
                                     </p> 
                                   </td>
