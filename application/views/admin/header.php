@@ -361,13 +361,24 @@
             </li>
 
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">User</span>
+              <span class="menu-header-text">Pameran Teknologi</span>
             </li>
 
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/panitia')){ echo 'active';} ?>">
               <a href="<?= base_url('page/panitia') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Documentation">Panitia</div>
+                <div data-i18n="Documentation">Karya</div>
+              </a>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">User</span>
+            </li>
+
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/user')){ echo 'active';} ?>">
+              <a href="<?= base_url('page/user') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Documentation">User</div>
               </a>
             </li>
             <li class="menu-item">  

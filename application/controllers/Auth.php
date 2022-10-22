@@ -24,8 +24,8 @@ class Auth extends CI_Controller {
 			'username'=>$user,
 			'password'=>md5($pass)
 		);
-		$cek = $this->Model_page->cek_login('tbl_panitia',$where)->num_rows();
-		$hasil= $this->Model_page->cek_login('tbl_panitia',$where)->result();
+		$cek = $this->Model_page->cek_login('tbl_user',$where)->num_rows();
+		$hasil= $this->Model_page->cek_login('tbl_user',$where)->result();
 
 		if($cek > 0 ){
 			foreach ($hasil as $data) {
@@ -69,7 +69,7 @@ class Auth extends CI_Controller {
       </div>
     </div>
     ');
-			redirect(base_url('panitia'));
+			redirect(base_url('auth'));
 		}
 	}
 
@@ -77,7 +77,7 @@ class Auth extends CI_Controller {
 	{
 		$this->session->sess_destroy();
 		$this->session->userdata('status')==" ";
-		redirect(base_url('panitia'));
+		redirect(base_url('auth'));
 	} 
 
 }
