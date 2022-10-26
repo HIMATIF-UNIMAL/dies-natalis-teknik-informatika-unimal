@@ -53,14 +53,21 @@ class Page extends CI_Controller {
 	}
 
 	public function simpan_user(){
+    $karakter = '123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 6);
 		if($this->input->post('role') == 2){
       $data = array(
         'nama' => $this->input->post('nama'),
         'username' => $this->input->post('username'),
         'role' => $this->input->post('role'),
+        'id_karya' => $slug,
         'password' => md5($this->input->post('password')),
       );
       $this->db->insert('tbl_user',$data);
+      $data = array(
+        'id' => $slug,
+      );
+      $this->db->insert('tbl_karya',$data);
       $this->session->set_flashdata('msg', '
       <div class="position-fixed" style="z-index: 9999999">
         <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
