@@ -27,6 +27,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/jquery/jquery.js"></script>
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/popper/popper.js"></script>
     <script src="<?php echo base_url('theme/') ?>assets/vendor/js/bootstrap.js"></script>

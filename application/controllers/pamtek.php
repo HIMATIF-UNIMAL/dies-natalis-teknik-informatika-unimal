@@ -95,4 +95,14 @@ class Pamtek extends CI_Controller {
 		}
 	}
 
+	public function qrcode()
+	{
+    belumLogin();
+    $data['title'] = 'Karya';
+		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
+    $this->load->view('admin/header', $data);
+		$this->load->view('admin/pamtek/qrcode');
+		$this->load->view('admin/footer');
+	}
+
 }
