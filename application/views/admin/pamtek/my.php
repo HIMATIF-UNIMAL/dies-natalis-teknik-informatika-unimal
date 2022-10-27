@@ -34,7 +34,6 @@
                                 <i class="bx bx-reset d-block d-sm-none"></i>
                                 <span class="d-none d-sm-block">Reset</span>
                               </button>
-
                               <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 2MB, Saran Rasio gambar 1:1.</p>
                             </div>
                           </div>

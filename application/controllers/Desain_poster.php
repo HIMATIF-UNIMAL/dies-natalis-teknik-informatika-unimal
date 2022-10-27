@@ -7,6 +7,9 @@ class Desain_poster extends CI_Controller {
 		parent::__construct();
     $this->config->load('mail');
     belumLogin();
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
 	}
 
 	public function setting()

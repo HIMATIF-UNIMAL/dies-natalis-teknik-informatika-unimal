@@ -44,6 +44,9 @@ class Page extends CI_Controller {
 
 	public function user()
 	{
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
     $data['title'] = 'User';
 		$data['hasil'] = $this->db->get_where('tbl_user', array('role'=>1))->result();
     $data['hasil2'] = $this->db->get_where('tbl_user', array('role'=>2))->result();
@@ -53,6 +56,9 @@ class Page extends CI_Controller {
 	}
 
 	public function simpan_user(){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
     $karakter = '123456789';
     $slug  = substr(str_shuffle($karakter), 0, 6);
 		if($this->input->post('role') == 2){
@@ -112,6 +118,9 @@ class Page extends CI_Controller {
 	}
 
 	public function edit_user(){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
 		$cek = $data['hasil'] = $this->db->get_where('tbl_user', ['id' => $this->input->post('id')])->row_array();
 		if($this->input->post('password') == null){
       $password = $cek['password'];
@@ -144,6 +153,9 @@ class Page extends CI_Controller {
 	}
 
 	public function hapus_user($id){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
 		$this->db->where('id', $id);
 		$this->db->delete('tbl_user');
     $this->session->set_flashdata('msg', '

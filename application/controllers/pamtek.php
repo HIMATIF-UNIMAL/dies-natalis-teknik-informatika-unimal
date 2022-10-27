@@ -9,7 +9,10 @@ class Pamtek extends CI_Controller {
 	public function karya()
 	{
     belumLogin();
-    $data['title'] = 'Karya';
+		if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
 		$data['hasil'] = $this->db->get('tbl_karya')->result();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/pamtek/karya');
@@ -18,8 +21,11 @@ class Pamtek extends CI_Controller {
 
 	public function pengunjung()
 	{
-    belumLogin();
-    $data['title'] = 'Karya';
+		belumLogin();
+		if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
 		$data['hasil'] = $this->db->get('tbl_pengunjung')->result();
     $this->load->view('kompetisi/include/header_page', $data);
 		$this->load->view('admin/pamtek/pengunjung');
@@ -28,9 +34,12 @@ class Pamtek extends CI_Controller {
 
 	public function tambah_pengunjung()
 	{
+		belumLogin();
+		if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
 		$karakter = '123456789';
     $slug  = substr(str_shuffle($karakter), 0, 4);
-    belumLogin();
 		$data = array(
 			'id' => $slug,
 			'nama' => $this->input->post('nama'),
@@ -60,7 +69,11 @@ class Pamtek extends CI_Controller {
 	public function my()
 	{
     belumLogin();
-    $data['title'] = 'Karya';
+		belumLogin();
+		if($this->session->userdata('role') != 2){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
 		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/pamtek/my');
@@ -68,6 +81,10 @@ class Pamtek extends CI_Controller {
 	}
 
 	public function update_karya(){
+		belumLogin();
+		if($this->session->userdata('role') != 2){
+      redirect(base_url('page/dashboard')); 
+    }
 		if(empty($_FILES['foto']['name'])){
 			$data = array(
 					'unit' => $this->input->post('unit'),
@@ -137,7 +154,10 @@ class Pamtek extends CI_Controller {
 	public function qrcode()
 	{
     belumLogin();
-    $data['title'] = 'Karya';
+		if($this->session->userdata('role') != 2){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
 		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/pamtek/qrcode');

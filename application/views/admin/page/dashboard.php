@@ -22,6 +22,7 @@
                   </div>
                 </div>
               </div>
+              <?php if($this->session->userdata('role') == 1 ){ ?>
               <div class="row">
                 <div class="col-lg-7 mb-4">
                   <div class="card">
@@ -132,6 +133,7 @@
                   </div>
                 </div>
               </div>
+              <?php } ?>
             </div>
           </div>
             <!-- / Content -->

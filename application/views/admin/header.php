@@ -75,6 +75,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
+            <?php if($this->session->userdata('role') == 1 ){ ?>
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Kompetisi Umum</span>
@@ -391,10 +392,13 @@
                 </li>
               </ul>
             </li>
-
+              <?php 
+              } 
+              ?>
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pameran Teknologi</span>
             </li>
+              <?php if($this->session->userdata('role') == 2 ){ ?>
 
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/my')){ echo 'active';} ?>">
               <a href="<?= base_url('pamtek/my') ?>"  class="menu-link">
@@ -408,7 +412,10 @@
                 <div data-i18n="Documentation">QR-Code</div>
               </a>
             </li>
-            
+            <?php 
+              } 
+              if($this->session->userdata('role') == 1 ){
+              ?>
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/karya')){ echo 'active';} ?>">
               <a href="<?= base_url('pamtek/karya') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-image"></i>
@@ -432,6 +439,9 @@
                 <div data-i18n="Documentation">User</div>
               </a>
             </li>
+            <?php 
+              } 
+              ?>
             <li class="menu-item">  
               <a href="<?= base_url('auth/logout') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-log-out"></i>
