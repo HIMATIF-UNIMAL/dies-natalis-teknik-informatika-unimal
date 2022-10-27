@@ -16,15 +16,54 @@ class Pamtek extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function user()
+	public function pengunjung()
 	{
-		// print_r()
+    belumLogin();
+    $data['title'] = 'Karya';
+		$data['hasil'] = $this->db->get('tbl_pengunjung')->result();
+    $this->load->view('kompetisi/include/header_page', $data);
+		$this->load->view('admin/pamtek/pengunjung');
+    $this->load->view('kompetisi/include/footer');
+	}
+
+	public function tambah_pengunjung()
+	{
+		$karakter = '123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 4);
+    belumLogin();
+		$data = array(
+			'id' => $slug,
+			'nama' => $this->input->post('nama'),
+			'instansi' => $this->input->post('instansi'),
+		);
+		$this->db->insert('tbl_pengunjung',$data);
+		$this->session->set_flashdata('msg', '
+					<div class="modal fade" id="pengunjung" tabindex="-1" aria-hidden="false" aria-labelledby="exampleModalLabel">
+					<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+						<div class="modal-content">
+								<div class="modal-body">
+									<div class="row justify-content-center text-center py-5">
+										<h6>Kode Pengunjung anda</h6>
+										<h1 class="text-dark">'.$slug.'</h1>
+									</div>
+									<div>
+										<button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+					');
+		redirect(base_url('pamtek/pengunjung'));  
+	}
+
+	public function my()
+	{
     belumLogin();
     $data['title'] = 'Karya';
 		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
-			// print_r($data);die();
     $this->load->view('admin/header', $data);
-		$this->load->view('admin/pamtek/user');
+		$this->load->view('admin/pamtek/my');
 		$this->load->view('admin/footer');
 	}
 
@@ -53,7 +92,7 @@ class Pamtek extends CI_Controller {
 					</div>
 				</div>
 				');
-      redirect(base_url('pamtek/user'));  
+      redirect(base_url('pamtek/my'));  
 		}else{
 			$config['upload_path']        = './file';
 			$config['allowed_types']       = 'img|png|jpeg|gif|jpg';
@@ -61,7 +100,7 @@ class Pamtek extends CI_Controller {
 			$this->load->library('upload', $config);
 			if ( ! $this->upload->do_upload('foto')){
 				$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal!! pastikan ekstensi gambar berupa gif, jpg atau png. Dengan maksimal ukuran gambar 2MB</div>');
-				redirect('pamtek/user');
+				redirect('pamtek/my');
 			}else{
 								$data = array('foto' => $this->upload->data());
 								$uploadData = $this->upload->data();
@@ -90,7 +129,7 @@ class Pamtek extends CI_Controller {
 								</div>
 							</div>
 							');
-						redirect(base_url('pamtek/user')); 
+						redirect(base_url('pamtek/my')); 
 			}
 		}
 	}

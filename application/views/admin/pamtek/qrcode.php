@@ -6,7 +6,7 @@
                   <div class="card">
                     <div class="card-header d-flex align-items-center justify-content-between">
                       <div class="card-title mb-0">
-                        <h5>QrCode Karya</h5>
+                        <h5>QR-Code Karya</h5>
                       </div>
                       <div>
                           <button class="btn btn-primary" onclick="cetak()"><i class=" bx bx-printer"></i>cetak</button>

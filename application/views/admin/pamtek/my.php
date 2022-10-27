@@ -4,7 +4,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="card">
-                      <h5 class="card-header">Karya Peserta</h5>
+                      <h5 class="card-header">Karya Saya</h5>
                       <!-- Account -->
                       <?= $this->session->flashdata('pesan'); ?>
                       <?php echo form_open_multipart('pamtek/update_karya');?>

@@ -396,10 +396,29 @@
               <span class="menu-header-text">Pameran Teknologi</span>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/panitia')){ echo 'active';} ?>">
-              <a href="<?= base_url('page/panitia') ?>"  class="menu-link">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/my')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/my') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Documentation">Karya Saya</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/qrcode')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/qrcode') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-qr-scan"></i>
+                <div data-i18n="Documentation">QR-Code</div>
+              </a>
+            </li>
+            
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/karya')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/karya') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
                 <div data-i18n="Documentation">Karya</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/pengunjung')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/pengunjung') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-pin"></i>
+                <div data-i18n="Documentation">Pengunjung</div>
               </a>
             </li>
 
@@ -407,7 +426,7 @@
               <span class="menu-header-text">User</span>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/user')){ echo 'active';} ?>">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/pengunjung')){ echo 'active';} ?>">
               <a href="<?= base_url('page/user') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Documentation">User</div>
