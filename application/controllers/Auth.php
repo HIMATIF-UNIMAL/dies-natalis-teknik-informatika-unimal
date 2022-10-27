@@ -32,6 +32,8 @@ class Auth extends CI_Controller {
 				$sesi = array(
 					'id'=>$data->id,
 					'nama'=>$data->nama,
+					'role'=>$data->role,
+					'id_karya'=>$data->id_karya,
 					'status'=>1
 					);
 			};

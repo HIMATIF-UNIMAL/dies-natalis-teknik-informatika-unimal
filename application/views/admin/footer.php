@@ -33,6 +33,8 @@
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="<?php echo base_url('theme/') ?>assets/vendor/js/menu.js"></script>
+    <script src="<?php echo base_url('theme/') ?>assets/js/pages-account-settings-account.js"></script>
+
     <!-- endbuild -->
 
     <!-- Vendors JS -->
