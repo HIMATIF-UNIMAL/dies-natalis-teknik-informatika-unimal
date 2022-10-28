@@ -37,6 +37,7 @@ class Page extends CI_Controller {
     $data['free_fire'] = $this->db->get_where('tbl_ff', array('status'=>0))->num_rows();
     $data['cipta_puisi'] = $this->db->get_where('tbl_cipta_puisi', array('status'=>0))->num_rows();
     $data['vocal_solo'] = $this->db->get_where('tbl_vocal_solo', array('status'=>0))->num_rows();
+    $data['hasil'] = $this->db->get('tbl_karya')->result();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/page/dashboard');
 		$this->load->view('admin/footer');

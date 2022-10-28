@@ -46,6 +46,28 @@
           $('#example').DataTable();
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/dashboard') AND ( $this->session->userdata('role') == 1)){ ?>
+    <script>
+      var options = {
+        chart: {
+          type: 'bar'
+        },
+        series: [{
+          name: 'sales',
+          data: [<?php foreach($hasil as $data){echo '"'.$data->rating.'" ,';}?>]
+        }],
+        xaxis: {
+          categories: [<?php foreach($hasil as $data){echo '"'.$data->judul.'" ,';}?>]
+        }
+      }
+
+      var chart = new ApexCharts(document.querySelector("#rating"), options);
+
+      chart.render();
+      <?php } ?>
+    </script>
+
 
     <!-- Main JS -->
     <script src="<?php echo base_url('theme/') ?>assets/js/main.js"></script>
