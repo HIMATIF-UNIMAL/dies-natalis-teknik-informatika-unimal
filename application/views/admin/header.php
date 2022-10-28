@@ -33,6 +33,7 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<?php echo base_url('theme/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Page CSS -->
 
@@ -42,6 +43,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<?php echo base_url('theme/') ?>assets/js/config.js"></script>
+    <script src="<?php echo base_url('theme/') ?>js/qrcode.js"></script>
   </head>
 
   <body>
@@ -73,6 +75,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
+            <?php if($this->session->userdata('role') == 1 ){ ?>
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Kompetisi Umum</span>
@@ -389,17 +392,68 @@
                 </li>
               </ul>
             </li>
+              <?php 
+              } 
+              ?>
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Pameran Teknologi</span>
+            </li>
+              <?php if($this->session->userdata('role') == 2 ){ ?>
+
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/my')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/my') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Documentation">Karya Saya</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/komentar')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/komentar') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-comment-dots"></i>
+                <div data-i18n="Documentation">Komentar</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/qrcode')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/qrcode') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-qr-scan"></i>
+                <div data-i18n="Documentation">QR-Code</div>
+              </a>
+            </li>
+            <?php 
+              } 
+              if($this->session->userdata('role') == 1 ){
+              ?>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/karya')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/karya') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div data-i18n="Documentation">Karya</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/pengunjung')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/pengunjung') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-pin"></i>
+                <div data-i18n="Documentation">Pengunjung</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/rating')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/rating') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Documentation">Rating</div>
+              </a>
+            </li>
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">User</span>
             </li>
 
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/panitia')){ echo 'active';} ?>">
-              <a href="<?= base_url('page/panitia') ?>"  class="menu-link">
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/pengunjung')){ echo 'active';} ?>">
+              <a href="<?= base_url('page/user') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Documentation">Panitia</div>
+                <div data-i18n="Documentation">User</div>
               </a>
             </li>
+            <?php 
+              } 
+              ?>
             <li class="menu-item">  
               <a href="<?= base_url('auth/logout') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-log-out"></i>
@@ -456,7 +510,7 @@
                           </div>
                           <div class="flex-grow-1">
                             <span class="fw-semibold d-block"><?= $this->session->userdata('nama') ?></span>
-                            <small class="text-muted">Panitia</small>
+                            <small class="text-muted">User</small>
                           </div>
                         </div>
                       </a>

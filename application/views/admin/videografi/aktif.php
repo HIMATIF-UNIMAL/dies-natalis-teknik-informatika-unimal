@@ -10,7 +10,7 @@
                         <table id="example" class="table table-bordered">
                           <thead>
                               <tr>
-                                  <th>Nama Tim</th>
+                                  <th>Nama Ketua</th>
                                   <th>No. WA</th>
                                   <th>Bukti</th>
                                   <th>Waktu Validasi</th>
@@ -20,7 +20,7 @@
                           <tbody>
                             <?php foreach($hasil as $data){ ?>
                               <tr>
-                                  <td><?php echo htmlentities($data->tim, ENT_QUOTES, 'UTF-8');?></td>
+                                  <td><?php echo htmlentities($data->nama, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->wa, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><a href="<?= base_url('file/'.$data->bukti) ?>"><?php echo htmlentities($data->bukti, ENT_QUOTES, 'UTF-8');?></a></td>
                                   <td><?php echo htmlentities($data->validasi, ENT_QUOTES, 'UTF-8');?></td>

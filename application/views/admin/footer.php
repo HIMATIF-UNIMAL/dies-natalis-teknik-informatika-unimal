@@ -27,16 +27,18 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/jquery/jquery.js"></script>
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/popper/popper.js"></script>
     <script src="<?php echo base_url('theme/') ?>assets/vendor/js/bootstrap.js"></script>
     <script src="<?php echo base_url('theme/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="<?php echo base_url('theme/') ?>assets/vendor/js/menu.js"></script>
+    <script src="<?php echo base_url('theme/') ?>assets/js/pages-account-settings-account.js"></script>
+
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script>
@@ -44,6 +46,28 @@
           $('#example').DataTable();
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/page/dashboard') AND ( $this->session->userdata('role') == 1)){ ?>
+    <script>
+      var options = {
+        chart: {
+          type: 'bar'
+        },
+        series: [{
+          name: 'sales',
+          data: [<?php foreach($hasil as $data){echo '"'.$data->rating.'" ,';}?>]
+        }],
+        xaxis: {
+          categories: [<?php foreach($hasil as $data){echo '"'.$data->judul.'" ,';}?>]
+        }
+      }
+
+      var chart = new ApexCharts(document.querySelector("#rating"), options);
+
+      chart.render();
+      <?php } ?>
+    </script>
+
 
     <!-- Main JS -->
     <script src="<?php echo base_url('theme/') ?>assets/js/main.js"></script>

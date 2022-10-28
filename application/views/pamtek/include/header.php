@@ -9,20 +9,19 @@
 >
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="https://tif-unimal20.web.id/frontend/assets/images/logo-it.png" type="image/gif" sizes="16x16">
-    <meta name="description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh">
-    <meta property="og:url" content="<?= base_url() ?>" />
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Dies Natalis 19 Teknik Informatika UNIMAL" />
-    <meta property="og:image" content="<?= base_url('/theme/assets/img/elements/dn19.png') ?>" />
-    <meta property="og:description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dies Natalis 19 Teknik Informatika UNIMAL</title>
+    <title>Pameran Teknologi | <?= $karya['judul'] ?></title>
 
+    <meta name="description" content="Sistem registrasi kompetisi Dies Natalis 19 Teknik Informatika Universitas Malikussaleh">
+    <meta property="og:url" content="<?= base_url() ?>" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pameran Teknologi | <?= $karya['judul'] ?>" />
+    <meta property="og:image" content="<?= base_url('/theme/assets/img/elements/dn19.png') ?>" />
+    <meta property="og:description" content="<?= $karya['deskripsi'] ?>" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('theme/') ?>assets/img/favicon/favicon.ico" />
 
@@ -44,8 +43,12 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<?php echo base_url('theme/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme CSS files as mentioned below (and change the theme property of the plugin) -->
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- important mandatory libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
 
     <!-- Page CSS -->
 
@@ -56,7 +59,7 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<?php echo base_url('theme/') ?>assets/js/config.js"></script>
   </head>
-  
+    
   <!--
   ======================================
       DEVELOPER: Fajar Rivaldi Chan
@@ -73,14 +76,23 @@
         <div class="layout-page">
           <!-- Navbar -->
 
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-4 text-center pt-5 pb-5">
-              <span class="pt-5">
-                <img src="<?php echo base_url('theme/') ?>assets/img/logo/logo_dn19.png" class="img-fluid" alt="">
-              </span>
+          <nav
+            class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar fixed-top"
+          >
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <a href="<?= base_url() ?>" class="nav-item d-flex align-items-center text-secondary">
+                  <i class="bx bx-arrow-back fs-4 lh-0 me-3"></i>
+                  Back To Home
+                </a>
               </div>
+              <!-- /Search -->
+
+
+              </ul>
             </div>
-          </div>
+          </nav>
 
           <!-- / Navbar -->

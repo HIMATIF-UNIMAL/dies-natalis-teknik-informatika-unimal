@@ -37,47 +37,92 @@ class Page extends CI_Controller {
     $data['free_fire'] = $this->db->get_where('tbl_ff', array('status'=>0))->num_rows();
     $data['cipta_puisi'] = $this->db->get_where('tbl_cipta_puisi', array('status'=>0))->num_rows();
     $data['vocal_solo'] = $this->db->get_where('tbl_vocal_solo', array('status'=>0))->num_rows();
+    $data['hasil'] = $this->db->get('tbl_karya')->result();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/page/dashboard');
 		$this->load->view('admin/footer');
 	}
 
-	public function panitia()
+	public function user()
 	{
-    $data['title'] = 'Panitia';
-		$data['hasil'] = $this->db->get('tbl_panitia')->result();
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'User';
+		$data['hasil'] = $this->db->get_where('tbl_user', array('role'=>1))->result();
+    $data['hasil2'] = $this->db->get_where('tbl_user', array('role'=>2))->result();
     $this->load->view('admin/header', $data);
-		$this->load->view('admin/page/panitia');
+		$this->load->view('admin/page/user');
 		$this->load->view('admin/footer');
 	}
 
-	public function simpan_panitia(){
-		$data = array(
-      'nama' => $this->input->post('nama'),
-      'username' => $this->input->post('username'),
-      'password' => md5($this->input->post('password')),
-    );
-		$this->db->insert('tbl_panitia',$data);
-    $this->session->set_flashdata('msg', '
-    <div class="position-fixed" style="z-index: 9999999">
-      <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <i class="bx bx-bell me-2"></i>
-          <div class="me-auto fw-semibold">Notifikasi</div>
-          <small>Now</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Berhasil menambahkan panitia
+	public function simpan_user(){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+    $karakter = '123456789';
+    $slug  = substr(str_shuffle($karakter), 0, 6);
+		if($this->input->post('role') == 2){
+      $data = array(
+        'nama' => $this->input->post('nama'),
+        'username' => $this->input->post('username'),
+        'role' => $this->input->post('role'),
+        'id_karya' => $slug,
+        'password' => md5($this->input->post('password')),
+      );
+      $this->db->insert('tbl_user',$data);
+      $data = array(
+        'id' => $slug,
+      );
+      $this->db->insert('tbl_karya',$data);
+      $this->session->set_flashdata('msg', '
+      <div class="position-fixed" style="z-index: 9999999">
+        <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Notifikasi</div>
+            <small>Now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Berhasil menambahkan user
+          </div>
         </div>
       </div>
-    </div>
-    ');
-    redirect(base_url('page/panitia')); 
+      ');
+      redirect(base_url('page/user')); 
+    }else{
+      $data = array(
+        'nama' => $this->input->post('nama'),
+        'username' => $this->input->post('username'),
+        'role' => $this->input->post('role'),
+        'password' => md5($this->input->post('password')),
+      );
+      $this->db->insert('tbl_user',$data);
+      $this->session->set_flashdata('msg', '
+      <div class="position-fixed" style="z-index: 9999999">
+        <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Notifikasi</div>
+            <small>Now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Berhasil menambahkan user
+          </div>
+        </div>
+      </div>
+      ');
+      redirect(base_url('page/user')); 
+    }
 	}
 
-	public function edit_panitia(){
-		$cek = $data['hasil'] = $this->db->get_where('tbl_panitia', ['id' => $this->input->post('id')])->row_array();
+	public function edit_user(){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+		$cek = $data['hasil'] = $this->db->get_where('tbl_user', ['id' => $this->input->post('id')])->row_array();
 		if($this->input->post('password') == null){
       $password = $cek['password'];
     }else{
@@ -89,7 +134,7 @@ class Page extends CI_Controller {
       'password' => $password,
     );
 		$this->db->where('id', $this->input->post('id'));
-		$this->db->update('tbl_panitia',$data);
+		$this->db->update('tbl_user',$data);
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -100,17 +145,20 @@ class Page extends CI_Controller {
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          Berhasil mengubah data panitia
+          Berhasil mengubah data user
         </div>
       </div>
     </div>
     ');
-    redirect(base_url('page/panitia')); 
+    redirect(base_url('page/user')); 
 	}
 
-	public function hapus_panitia($id){
+	public function hapus_user($id){
+    if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
 		$this->db->where('id', $id);
-		$this->db->delete('tbl_panitia');
+		$this->db->delete('tbl_user');
     $this->session->set_flashdata('msg', '
     <div class="position-fixed" style="z-index: 9999999">
       <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -121,11 +169,11 @@ class Page extends CI_Controller {
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          Berhasil menghapus panitia
+          Berhasil menghapus user
         </div>
       </div>
     </div>
     ');
-    redirect(base_url('page/panitia')); 
+    redirect(base_url('page/user')); 
 	}
 }
