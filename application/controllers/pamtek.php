@@ -4,6 +4,92 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pamtek extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+		$this->load->model('Model_page');
+	}
+
+	public function id($id)
+	{
+		$data['karya'] = $this->db->get_where('tbl_karya', ['id' => $id])->row_array();
+		$q = $this->db->select('*')->from('tbl_rating')->join('tbl_pengunjung', 'tbl_pengunjung.id=tbl_rating.id_pengunjung', 'right')->where(['id_karya' => $id, 'komen !=' => ''])->get();
+    $data['hasil'] = $q->result();
+		// print_r($data);die();
+    $this->load->view('pamtek/include/header', $data);
+		$this->load->view('pamtek/detail');
+    $this->load->view('kompetisi/include/footer');
+	}
+
+	public function tambah_rating()
+	{
+		$where = array(
+			'id'=>$this->input->post('kode'),
+		);
+		$cek_pengunjung = $this->Model_page->cek('tbl_pengunjung',$where)->num_rows();
+		if($cek_pengunjung > 0 ){ 
+			$where_a = array(
+					'id_pengunjung'=>$this->input->post('kode'),
+					'id_karya'=>$this->input->post('id_karya'),
+			);
+			$cek_rating = $this->Model_page->cek('tbl_rating',$where_a)->num_rows();
+			if($cek_rating > 0 ){ 
+				$this->session->set_flashdata('msg', '
+				<div class="position-fixed" style="z-index: 9999999">
+					<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-warning top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+						<div class="toast-header">
+							<i class="bx bx-bell me-2"></i>
+							<div class="me-auto fw-semibold">Notifikasi</div>
+							<small>Now</small>
+							<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							Maaf, Anda telah mengisi rating
+						</div>
+					</div>
+				</div>
+				');
+      redirect(base_url('pamtek/id/'.$this->input->post('id_karya')));
+			}else{
+				$data = array(
+					'id_pengunjung' => $this->input->post('kode'),
+					'id_karya' => $this->input->post('id_karya'),
+					'rating' => $this->input->post('rating'),
+					'komen' => $this->input->post('komentar'),
+				);
+			$this->db->insert('tbl_rating',$data);
+				$this->session->set_flashdata('msg', '
+				<div class="position-fixed" style="z-index: 9999999">
+					<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+						<div class="toast-header">
+							<i class="bx bx-bell me-2"></i>
+							<div class="me-auto fw-semibold">Notifikasi</div>
+							<small>Now</small>
+							<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							Terimakasih telah berpartisipasi dalam pameran teknologi
+						</div>
+					</div>
+				</div>
+				');
+      redirect(base_url('pamtek/id/'.$this->input->post('id_karya')));
+			}
+		}else{
+				$this->session->set_flashdata('msg', '
+				<div class="position-fixed" style="z-index: 9999999">
+					<div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+						<div class="toast-header">
+							<i class="bx bx-bell me-2"></i>
+							<div class="me-auto fw-semibold">Notifikasi</div>
+							<small>Now</small>
+							<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							Maaf, Kode Pengunjung anda tidak terdaftar
+						</div>
+					</div>
+				</div>
+				');
+      redirect(base_url('pamtek/id/'.$this->input->post('id_karya')));
+		}
 	}
 
 	public function karya()
@@ -44,6 +130,7 @@ class Pamtek extends CI_Controller {
 			'id' => $slug,
 			'nama' => $this->input->post('nama'),
 			'instansi' => $this->input->post('instansi'),
+			'log_user' => $this->session->userdata('nama'),
 		);
 		$this->db->insert('tbl_pengunjung',$data);
 		$this->session->set_flashdata('msg', '

@@ -498,7 +498,7 @@
                           </div>
                           <div class="flex-grow-1">
                             <span class="fw-semibold d-block"><?= $this->session->userdata('nama') ?></span>
-                            <small class="text-muted">Panitia</small>
+                            <small class="text-muted">User</small>
                           </div>
                         </div>
                       </a>

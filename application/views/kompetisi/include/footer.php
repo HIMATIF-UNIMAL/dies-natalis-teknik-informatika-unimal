@@ -42,7 +42,6 @@
           $('#example').DataTable();
       });
     </script>
-
     <!-- Main JS -->
     <script src="<?php echo base_url('theme/') ?>assets/js/main.js"></script>
     <script>
