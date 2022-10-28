@@ -406,6 +406,12 @@
                 <div data-i18n="Documentation">Karya Saya</div>
               </a>
             </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/komentar')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/komentar') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-comment-dots"></i>
+                <div data-i18n="Documentation">Komentar</div>
+              </a>
+            </li>
             <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/qrcode')){ echo 'active';} ?>">
               <a href="<?= base_url('pamtek/qrcode') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-qr-scan"></i>
@@ -426,6 +432,12 @@
               <a href="<?= base_url('pamtek/pengunjung') ?>"  class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user-pin"></i>
                 <div data-i18n="Documentation">Pengunjung</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/pamtek/rating')){ echo 'active';} ?>">
+              <a href="<?= base_url('pamtek/rating') ?>"  class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Documentation">Rating</div>
               </a>
             </li>
 

@@ -155,7 +155,6 @@ class Pamtek extends CI_Controller {
 
 	public function my()
 	{
-    belumLogin();
 		belumLogin();
 		if($this->session->userdata('role') != 2){
       redirect(base_url('page/dashboard')); 
@@ -236,6 +235,35 @@ class Pamtek extends CI_Controller {
 						redirect(base_url('pamtek/my')); 
 			}
 		}
+	}
+
+	public function komentar()
+	{
+		belumLogin();
+		if($this->session->userdata('role') != 2){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
+		$q = $this->db->select('*')->from('tbl_rating')->join('tbl_pengunjung', 'tbl_pengunjung.id=tbl_rating.id_pengunjung')->where(['id_karya' => $this->session->userdata('id_karya'), 'komen !=' => ''])->get();
+    $data['hasil'] = $q->result();
+    $this->load->view('admin/header', $data);
+		$this->load->view('admin/pamtek/komentar');
+    $this->load->view('kompetisi/include/footer');
+	}
+
+	public function rating()
+	{
+		belumLogin();
+		if($this->session->userdata('role') != 1){
+      redirect(base_url('page/dashboard')); 
+    }
+    $data['title'] = 'Pameran Teknologi';
+		$q = $this->db->select('*')->from('tbl_rating')->join('tbl_pengunjung', 'tbl_pengunjung.id=tbl_rating.id_pengunjung', 'left')->join('tbl_karya', 'tbl_karya.id=tbl_rating.id_karya', 'left')->get();
+    $data['hasil'] = $q->result();
+		// print_r($data);die();
+    $this->load->view('admin/header', $data);
+		$this->load->view('admin/pamtek/rating');
+		$this->load->view('admin/footer');
 	}
 
 	public function qrcode()
