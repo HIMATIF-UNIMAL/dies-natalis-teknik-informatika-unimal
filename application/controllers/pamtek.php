@@ -266,17 +266,21 @@ class Pamtek extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function qrcode()
+	public function qrcode($id = null)
 	{
     belumLogin();
-		if($this->session->userdata('role') != 2){
-      redirect(base_url('page/dashboard')); 
-    }
-    $data['title'] = 'Pameran Teknologi';
-		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
-    $this->load->view('admin/header', $data);
-		$this->load->view('admin/pamtek/qrcode');
-		$this->load->view('admin/footer');
+		$data['title'] = 'Pameran Teknologi';
+		if($this->session->userdata('role') == 2){
+			$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
+			$this->load->view('admin/header', $data);
+			$this->load->view('admin/pamtek/qrcode');
+			$this->load->view('admin/footer');
+    }else{
+			$data['user'] = $this->db->get_where('tbl_karya', ['id' => $id])->row_array();
+			$this->load->view('admin/header', $data);
+			$this->load->view('admin/pamtek/qrcode');
+			$this->load->view('admin/footer');
+		}
 	}
 
 }
