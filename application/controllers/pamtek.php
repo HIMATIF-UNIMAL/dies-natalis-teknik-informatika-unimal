@@ -51,7 +51,7 @@ class Pamtek extends CI_Controller {
 				$data = array(
 					'id_pengunjung' => $this->input->post('kode'),
 					'id_karya' => $this->input->post('id_karya'),
-					'rating' => $this->input->post('rating'),
+					'jumlah' => $this->input->post('rating'),
 					'komen' => $this->input->post('komentar'),
 				);
 			$this->db->insert('tbl_rating',$data);
@@ -260,23 +260,56 @@ class Pamtek extends CI_Controller {
     $data['title'] = 'Pameran Teknologi';
 		$q = $this->db->select('*')->from('tbl_rating')->join('tbl_pengunjung', 'tbl_pengunjung.id=tbl_rating.id_pengunjung', 'left')->join('tbl_karya', 'tbl_karya.id=tbl_rating.id_karya', 'left')->get();
     $data['hasil'] = $q->result();
-		// print_r($data);die();
+		//  print_r($data);die();
     $this->load->view('admin/header', $data);
 		$this->load->view('admin/pamtek/rating');
 		$this->load->view('admin/footer');
 	}
 
-	public function qrcode()
+	public function hapus_komentar($id)
 	{
-    belumLogin();
-		if($this->session->userdata('role') != 2){
+		belumLogin();
+		if($this->session->userdata('role') != 1){
       redirect(base_url('page/dashboard')); 
     }
-    $data['title'] = 'Pameran Teknologi';
-		$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
-    $this->load->view('admin/header', $data);
-		$this->load->view('admin/pamtek/qrcode');
-		$this->load->view('admin/footer');
+		$data = array(
+			'komen' => "",
+		);
+		$this->db->where('id_rating', $id);
+		$this->db->update('tbl_rating', $data);
+    $this->session->set_flashdata('msg', '
+    <div class="position-fixed" style="z-index: 9999999">
+      <div id="toast" class="bs-toast toast toast-placement-ex m-2 fade bg-success top-0 start-50 translate-middle-x show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <i class="bx bx-bell me-2"></i>
+          <div class="me-auto fw-semibold">Notifikasi</div>
+          <small>Now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Berhasil menghapus komentar
+        </div>
+      </div>
+    </div>
+    ');
+		redirect(base_url('pamtek/rating'));  
+	}
+
+	public function qrcode($id = null)
+	{
+    belumLogin();
+		$data['title'] = 'Pameran Teknologi';
+		if($this->session->userdata('role') == 2){
+			$data['user'] = $this->db->get_where('tbl_karya', ['id' => $this->session->userdata('id_karya')])->row_array();
+			$this->load->view('admin/header', $data);
+			$this->load->view('admin/pamtek/qrcode');
+			$this->load->view('admin/footer');
+    }else{
+			$data['user'] = $this->db->get_where('tbl_karya', ['id' => $id])->row_array();
+			$this->load->view('admin/header', $data);
+			$this->load->view('admin/pamtek/qrcode');
+			$this->load->view('admin/footer');
+		}
 	}
 
 }
