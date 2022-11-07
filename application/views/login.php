@@ -69,7 +69,7 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Login Panitia</h4>
+              <h4 class="mb-2">Login </h4>
               <p class="mb-4">Sistem Manajemen administrasi DN19</p>
               <?= $this->session->flashdata('msg'); ?>
               <form id="formAuthentication" class="mb-3" action="<?php echo base_url('auth/login') ?>" method="POST">

@@ -262,6 +262,36 @@
               </ul>
             </li>
 
+            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active open';} ?>">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Layouts">Mobile Legend</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/setting') ?>" class="menu-link">
+                    <div data-i18n="Without menu">Setting</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/pending') ?>" class="menu-link">
+                    <div data-i18n="Without navbar">Pending</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/aktif') ?>" class="menu-link">
+                    <div data-i18n="Container">Aktif</div>
+                  </a>
+                </li>
+                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak')){ echo 'active';} ?>">
+                  <a href="<?= base_url('mobile_legend/tolak') ?>" class="menu-link">
+                    <div data-i18n="Fluid">Tolak</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Kompetisi Mahasiswa</span>
             </li>
@@ -328,38 +358,9 @@
               </ul>
             </li>
             
-            <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak') OR ($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active open';} ?>">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Layouts">Mobile Legend</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/setting')){ echo 'active';} ?>">
-                  <a href="<?= base_url('mobile_legend/setting') ?>" class="menu-link">
-                    <div data-i18n="Without menu">Setting</div>
-                  </a>
-                </li>
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/pending')){ echo 'active';} ?>">
-                  <a href="<?= base_url('mobile_legend/pending') ?>" class="menu-link">
-                    <div data-i18n="Without navbar">Pending</div>
-                  </a>
-                </li>
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/aktif')){ echo 'active';} ?>">
-                  <a href="<?= base_url('mobile_legend/aktif') ?>" class="menu-link">
-                    <div data-i18n="Container">Aktif</div>
-                  </a>
-                </li>
-                <li class="menu-item <?php if(($_SERVER['PHP_SELF']) == ($_SERVER['SCRIPT_NAME'].'/mobile_legend/tolak')){ echo 'active';} ?>">
-                  <a href="<?= base_url('mobile_legend/tolak') ?>" class="menu-link">
-                    <div data-i18n="Fluid">Tolak</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
 
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Lainnya</span>
+              <span class="menu-header-text">Bootcamp</span>
             </li>
 
             <!-- Layouts -->
