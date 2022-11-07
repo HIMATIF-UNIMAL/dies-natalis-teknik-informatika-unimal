@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'kompetisi';
+$route['default_controller'] = 'home';
 $route['panitia'] = 'auth';
 $route['desain_poster'] = 'kompetisi/desain_poster';
 $route['tipografi'] = 'kompetisi/tipografi';
@@ -61,5 +61,5 @@ $route['pubgm'] = 'kompetisi/pubgm';
 $route['free_fire'] = 'kompetisi/free_fire';
 $route['bootcamp'] = 'kompetisi/bootcamp';
 $route['problem_solving_coding'] = 'kompetisi/problem_solving_coding';
-$route['404_override'] = 'kompetisi/not_found';
+$route['404_override'] = 'home/not_found';
 $route['translate_uri_dashes'] = FALSE;

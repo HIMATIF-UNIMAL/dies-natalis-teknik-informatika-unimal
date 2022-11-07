@@ -26,7 +26,10 @@
                                   <td><?php echo htmlentities($data->angkatan, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->unit, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->rating, ENT_QUOTES, 'UTF-8');?></td>
-                                  <td><a href="<?= base_url('pamtek/qrcode/'.$data->id,) ?>" class="btn btn-primary btn-icon"><i class='bx bx-qr-scan'></i></a></td>
+                                  <td>
+                                    <a href="<?= base_url('pamtek/qrcode/'.$data->id,) ?>" class="btn btn-primary btn-icon"><i class='bx bx-qr-scan'></i></a>
+                                    
+                                  </td>
                               </tr>
                             <?php } ?>
                           </tbody>
