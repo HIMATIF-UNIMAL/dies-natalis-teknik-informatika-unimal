@@ -16,6 +16,7 @@
                                   <th>Asal Instansi</th>
                                   <th>Komentar</th>
                                   <th>Total Rating</th>
+                                  <th>Aksi</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -26,7 +27,16 @@
                                   <td><?php echo htmlentities($data->nama, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->instansi, ENT_QUOTES, 'UTF-8');?></td>
                                   <td><?php echo htmlentities($data->komen, ENT_QUOTES, 'UTF-8');?></td>
-                                  <td><?php echo htmlentities($data->rating, ENT_QUOTES, 'UTF-8');?></td>
+                                  <td><?php echo htmlentities($data->jumlah, ENT_QUOTES, 'UTF-8');?></td>
+                                  <td>
+                                    <?php
+                                     if($data->komen != '') {
+                                    ?>
+                                    <a href="<?= base_url('pamtek/hapus_komentar/'.$data->id_rating) ?>" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus Komentar</a>
+                                    <?php
+                                     }
+                                    ?>
+                                  </td>
                               </tr>
                             <?php } ?>
                           </tbody>
